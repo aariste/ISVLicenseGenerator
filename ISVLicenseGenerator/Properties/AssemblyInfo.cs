@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ISVLicenseGenerator")]
 [assembly: AssemblyDescription("Generate an ISV license for MSDyn365FO from an USB eToken")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Adrià Ariste Santacreu")]
 [assembly: AssemblyProduct("ISVLicenseGenerator")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
