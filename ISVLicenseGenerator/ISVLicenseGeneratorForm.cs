@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using Microsoft.Dynamics.AX.Framework.Tools.ModelManagement;
 
@@ -94,12 +95,7 @@ namespace ISVLicenseGenerator
 
         private void usageToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To Do");
-        }
-
-        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            Process.Start("https://github.com/aariste/ISVLicenseGenerator/blob/master/README.md");
         }
     }
 }
