@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ISVLicenseGeneratorForm));
             this.PathTB = new System.Windows.Forms.TextBox();
             this.LicenseCodeTB = new System.Windows.Forms.TextBox();
             this.CustomerTB = new System.Windows.Forms.TextBox();
@@ -242,7 +243,7 @@
             // usageToolStripMenuItem
             // 
             this.usageToolStripMenuItem.Name = "usageToolStripMenuItem";
-            this.usageToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            this.usageToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.usageToolStripMenuItem.Text = "Usage";
             this.usageToolStripMenuItem.Click += new System.EventHandler(this.usageToolStripMenuItem_Click);
             // 
@@ -269,6 +270,7 @@
             this.Controls.Add(this.LicenseCodeTB);
             this.Controls.Add(this.PathTB);
             this.Controls.Add(this.MainMenuStrip);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ISVLicenseGeneratorForm";
             this.Text = "ISV License Generator";
             ((System.ComponentModel.ISupportInitialize)(this.UserCount)).EndInit();
