@@ -221,9 +221,9 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement.ConsoleSupport
                 {
                     expirationDate = new DateTime?(DateTime.Parse(parameterInfo6.Value, (IFormatProvider)CultureInfo.CurrentCulture));
                 }
-                catch
+                catch (FormatException ex)
                 {
-                    this.context.ReportError(Resources.InvalidLicenseExpirationDateFormat);
+                    this.context.ReportError(String.Format("{0}. Exception: {1}", Resources.InvalidLicenseExpirationDateFormat, ex.Message));
                     return false;
                 }
             }
