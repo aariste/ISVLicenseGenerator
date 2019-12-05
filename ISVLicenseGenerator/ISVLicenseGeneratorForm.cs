@@ -35,7 +35,7 @@ namespace ISVLicenseGenerator
             saveFileDialog.Title = "Save license";
             saveFileDialog.ShowDialog();
 
-            if (saveFileDialog.FileName != "")
+            if (!String.IsNullOrEmpty(saveFileDialog.FileName))
             {
                 System.IO.FileStream fs = (System.IO.FileStream)saveFileDialog.OpenFile();
 

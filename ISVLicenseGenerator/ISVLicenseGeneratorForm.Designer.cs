@@ -301,7 +301,7 @@
         private System.Windows.Forms.DateTimePicker ExpirationDatePicker;
         private System.Windows.Forms.NumericUpDown UserCount;
         private System.Windows.Forms.Label MandatoryLbl;
-        private System.Windows.Forms.MenuStrip MainMenuStrip;
+        private new System.Windows.Forms.MenuStrip MainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
