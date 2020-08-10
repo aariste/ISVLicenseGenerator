@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Dynamics.AX.Security.Instrumentation">
+      <HintPath>..\..\..\..\Desktop\Microsoft.Dynamics.AX.Security.Instrumentation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Security" />

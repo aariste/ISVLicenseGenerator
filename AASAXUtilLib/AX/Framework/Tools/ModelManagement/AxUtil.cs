@@ -64,7 +64,7 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             {
                 X509Certificate2 certificate = x509;
 
-                return new LicenseGenerator(this.config.LicenseInfo, this.context).GenerateLicense(certificate);
+                return new LicenseGenerator(this.config, this.context).GenerateLicense(certificate);
             }
 
             return false;

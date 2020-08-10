@@ -7,9 +7,13 @@ namespace ISVLicenseGenerator
 {
     public partial class ISVLicenseGeneratorForm : Form
     {
+        AxUtilConfiguration config;
+
         public ISVLicenseGeneratorForm()
         {
             InitializeComponent();
+
+            config = new AxUtilConfiguration();
         }
 
         private void GenerateBtn_Click(object sender, EventArgs e)
@@ -71,8 +75,7 @@ namespace ISVLicenseGenerator
                 MessageBox.Show("Please fill all mandatory fields.");
                 throw new System.MissingFieldException("Please fill all mandatory fields.");
             }
-
-            AxUtilConfiguration config = new AxUtilConfiguration();
+            
             AxUtilContext context = new AxUtilContext();
 
             config.LicenseInfo = licenseInfo;
@@ -96,6 +99,20 @@ namespace ISVLicenseGenerator
         private void usageToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/aariste/ISVLicenseGenerator/blob/master/README.md");
+        }
+
+        private void SHA1LicenceRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            SHA1LicenceRadioBtn.Checked = !SHA256LicenceRadioBtn.Checked;
+
+            config.SignatureVersion = SHA1LicenceRadioBtn.Checked ? 1 : 0;
+        }
+
+        private void SHA256LicenceRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            SHA256LicenceRadioBtn.Checked = !SHA1LicenceRadioBtn.Checked;
+            
+            config.SignatureVersion = SHA256LicenceRadioBtn.Checked ? 0 : 1;
         }
     }
 }

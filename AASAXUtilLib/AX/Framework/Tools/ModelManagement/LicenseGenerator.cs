@@ -1,4 +1,5 @@
 ﻿using Microsoft.Dynamics.AX.Framework.Tools.ModelManagement.Properties;
+using Microsoft.Dynamics.AX.Security.Instrumentation;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -19,38 +20,37 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
         private string formattedDate;
         private string formattedUserCount;
         private string formattedTimestamp;
-        private const byte SignatureVersion = 1;
 
-        internal LicenseGenerator(LicenseInfo licenseInfo, AxUtilContext context)
+        internal int SignatureVersion { get; set; }
+
+        internal LicenseGenerator(AxUtilConfiguration configuration, AxUtilContext context)
         {
-            this.licenseInfo = licenseInfo;
+            this.licenseInfo = configuration.LicenseInfo;
             this.context = context;
+            this.SignatureVersion = configuration.SignatureVersion;
             NumberFormatInfo numberFormat = CultureInfo.InvariantCulture.NumberFormat;
             int num;
             if (this.licenseInfo.ExpirationDate.HasValue)
             {
                 DateTime dateTime = this.licenseInfo.ExpirationDate.Value;
-                string[] strArray = new string[5]
-                {
-          dateTime.Day.ToString((IFormatProvider) numberFormat),
-          ".",
-          dateTime.Month.ToString((IFormatProvider) numberFormat),
-          ".",
-          null
-                };
+                string[] strArray = new string[5];
+                num = dateTime.Day;
+                strArray[0] = num.ToString((IFormatProvider)numberFormat);
+                strArray[1] = ".";
+                num = dateTime.Month;
+                strArray[2] = num.ToString((IFormatProvider)numberFormat);
+                strArray[3] = ".";
                 num = dateTime.Year;
                 strArray[4] = num.ToString((IFormatProvider)numberFormat);
                 this.formattedDate = string.Concat(strArray);
             }
-            int? userCount = this.licenseInfo.UserCount;
-            if (userCount.HasValue)
+            if (this.licenseInfo.UserCount.HasValue)
             {
-                userCount = this.licenseInfo.UserCount;
+                int? userCount = this.licenseInfo.UserCount;
                 num = 0;
-                if ((userCount.GetValueOrDefault() > num ? (userCount.HasValue ? 1 : 0) : 0) != 0)
+                if (userCount.GetValueOrDefault() > num & userCount.HasValue)
                 {
-                    userCount = this.licenseInfo.UserCount;
-                    num = userCount.Value;
+                    num = this.licenseInfo.UserCount.Value;
                     this.formattedUserCount = num.ToString((IFormatProvider)numberFormat);
                     goto label_6;
                 }
@@ -58,33 +58,23 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             this.formattedUserCount = string.Empty;
         label_6:
             string[] strArray1 = new string[5];
-            num = licenseInfo.Timestamp.Day;
+            num = this.licenseInfo.Timestamp.Day;
             strArray1[0] = num.ToString((IFormatProvider)numberFormat);
             strArray1[1] = ".";
-            DateTime timestamp = licenseInfo.Timestamp;
+            DateTime timestamp = this.licenseInfo.Timestamp;
             num = timestamp.Month;
             strArray1[2] = num.ToString((IFormatProvider)numberFormat);
             strArray1[3] = ".";
-            timestamp = licenseInfo.Timestamp;
+            timestamp = this.licenseInfo.Timestamp;
             num = timestamp.Year;
             strArray1[4] = num.ToString((IFormatProvider)numberFormat);
             this.formattedTimestamp = string.Concat(strArray1);
         }
 
-        internal bool GenerateLicense()
-        {
-            X509Certificate2 certificate = this.LoadCertificate();
-            if (certificate == null)
-                return false;
-            return this.GenerateLicenseFile(this.GenerateSignature(certificate), certificate);
-        }
-
         internal bool GenerateLicense(X509Certificate2 usbCertificate)
         {
             X509Certificate2 certificate = usbCertificate;
-            if (certificate == null)
-                return false;
-            return this.GenerateLicenseFile(this.GenerateSignature(certificate), certificate);
+            return certificate != null && this.GenerateLicenseFile(this.GenerateSignature(certificate), certificate);
         }
 
         private bool ValidateCertificate(X509Certificate2 certificate)
@@ -141,29 +131,55 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
                 this.context.ReportError(string.Format((IFormatProvider)CultureInfo.CurrentCulture, Resources.CertificateLoadFailure, (object)ex.Message));
                 return (X509Certificate2)null;
             }
-            if (!this.ValidateCertificate(certificate))
-                return (X509Certificate2)null;
-            return certificate;
+            return !this.ValidateCertificate(certificate) ? (X509Certificate2)null : certificate;
         }
 
-        [SuppressMessage("Microsoft.Cryptographic.Standard", "CA5354:SHA1CannotBeUsed", Justification = "Supporting SHA1 due to business decisions that industry has not taken SHA2 widely, exception will be fired on this case.")]
         private string GenerateSignature(X509Certificate2 certificate)
         {
             byte[] bytes = new UnicodeEncoding().GetBytes((this.licenseInfo.Customer + this.licenseInfo.SerialNumber + this.formattedDate + this.licenseInfo.LicenseCode + this.formattedUserCount + this.formattedTimestamp).ToUpperInvariant());
             RSACryptoServiceProvider privateKey = certificate.PrivateKey as RSACryptoServiceProvider;
-            //SecurityManagementEventSource.EventWriteHashingCallStackMethod("LicenseGenerator_GenerateSignature", "SHA1", 160, string.Empty, Environment.StackTrace);
-            byte[] buffer = bytes;
-            SHA1Managed shA1Managed = new SHA1Managed();
-            byte[] numArray1 = privateKey.SignData(buffer, (object)shA1Managed);
+            byte[] numArray1 = this.SignatureVersion == 1 ? this.SignDataLegacy(privateKey, bytes) : this.SignData(privateKey, bytes);
             byte[] inArray = new byte[((IEnumerable<byte>)numArray1).Count<byte>() + 1];
             int num1 = 0;
             byte[] numArray2 = inArray;
             int index = num1;
             int num2 = index + 1;
-            numArray2[index] = (byte)1;
-            foreach (byte num3 in ((IEnumerable<byte>)numArray1).Reverse<byte>())
-                inArray[num2++] = num3;
+            int num3 = (int)Convert.ToByte(this.SignatureVersion);
+            numArray2[index] = (byte)num3;
+            foreach (byte num4 in ((IEnumerable<byte>)numArray1).Reverse<byte>())
+                inArray[num2++] = num4;
             return Convert.ToBase64String(inArray);
+        }
+
+        private byte[] SignData(RSACryptoServiceProvider rsaCryptoServiceProvider, byte[] data)
+        {
+            byte[] numArray = (byte[])null;
+            try
+            {
+                SecurityManagementEventSource.EventWriteHashingCallStackMethod("LicenseGenerator_SignData", "SHA256", 256, string.Empty, Environment.StackTrace);
+                numArray = rsaCryptoServiceProvider.SignData(data, CryptoConfig.CreateFromName("SHA256"));
+            }
+            catch (Exception ex)
+            {
+                SecurityManagementEventSource.EventWriteLicenseGeneratorSignDataException(ex.Message, ex.Source, ex.StackTrace);
+                SecurityManagementEventSource.EventWriteLicenseGeneratorSignDataSHA256Failed();
+            }
+            return numArray;
+        }
+
+        [SuppressMessage("Microsoft.Cryptographic.Standard", "CA5354:SHA1CannotBeUsed", Justification = "Supporting SHA1 due to business decisions that industry has not taken SHA2 widely, exception will be fired on this case.")]
+        private byte[] SignDataLegacy(RSACryptoServiceProvider rsaCryptoServiceProvider, byte[] data)
+        {
+            try
+            {
+                SecurityManagementEventSource.EventWriteHashingCallStackMethod("LicenseGenerator_SignData", "SHA1", 160, string.Empty, Environment.StackTrace);
+                return rsaCryptoServiceProvider.SignData(data, (object)new SHA1Managed());
+            }
+            catch (Exception ex)
+            {
+                SecurityManagementEventSource.EventWriteLicenseGeneratorSignDataException(ex.Message, ex.Source, ex.StackTrace);
+                throw;
+            }
         }
     }
 }
