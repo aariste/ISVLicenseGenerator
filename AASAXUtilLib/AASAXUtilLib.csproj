@@ -32,8 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Dynamics.AX.Security.Instrumentation">
-      <HintPath>..\..\..\..\Desktop\Microsoft.Dynamics.AX.Security.Instrumentation.dll</HintPath>
+    <Reference Include="Microsoft.Dynamics.AX.Security.Instrumentation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Microsoft.Dynamics.AX.Security.Instrumentation\Microsoft.Dynamics.AX.Security.Instrumentation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -63,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="AX\Framework\Tools\ModelManagement\Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Microsoft.Dynamics.AX.Security.Instrumentation\Microsoft.Dynamics.AX.Security.Instrumentation.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
