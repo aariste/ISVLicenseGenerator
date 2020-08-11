@@ -5,9 +5,8 @@ on: [push]
 jobs:
   build:
     runs-on: windows-2019
-    steps:      
-      - uses: actions/checkout@netcore
-      - uses: actions/setup-dotnet@netcore
-        with:
-        dotnet-version: '3.1.x' # SDK Version to use; x will use the latest version of the 3.1 channel
-      - run: dotnet build <my project>censeGenerator.sln
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build DotNET
+        run: cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
+           .\MSBuild.exe $Env:GITHUB_WORKSPACE\ISVLicenseGenerator.sln
