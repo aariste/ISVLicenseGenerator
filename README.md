@@ -6,6 +6,8 @@ This tool has been created to generate ISV licenses for Microsoft Dynamics 365 f
 
 The [standard ISV licensing](https://docs.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/dev-tools/isv-licensing#certificate-import-and-export) only supports software PFX (PKCS #12) format certificates. In case you buy a certificate and you get a CSP token you won't be able to export the private key needed to sign the license.
 
+The new version has been ported to .NET Core 3.1.
+
 # Transition to SHA265
 The [SHA1 hashing algorithm will be deprecated in early 2021](https://docs.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/get-started/removed-deprecated-features-platform-updates#isv-licenses-created-by-using-the-sha1-hashing-algorithm). The tool supports both algorithms right now but please keep in mind that you should check with your certificate provider if yours supports SHA256 before SHA1 is finally retired.
 
