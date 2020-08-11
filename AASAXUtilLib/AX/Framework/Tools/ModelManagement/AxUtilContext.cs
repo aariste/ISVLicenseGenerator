@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Runtime.Remoting.Lifetime;
-using System.Security.Permissions;
 
 namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
 {
@@ -78,14 +76,6 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
 
         public virtual void DisplayStatus(string status)
         {
-        }
-
-        [SecurityPermission(SecurityAction.Demand, Flags = SecurityPermissionFlag.Infrastructure)]
-        public override object InitializeLifetimeService()
-        {
-            ILease lease = (ILease)base.InitializeLifetimeService();
-            lease.InitialLeaseTime = TimeSpan.Zero;
-            return (object)lease;
         }
     }
 }

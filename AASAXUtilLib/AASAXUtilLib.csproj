@@ -1,72 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DAD27A2C-77C4-48E2-95C9-69A864F8595E}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.Dynamics</RootNamespace>
-    <AssemblyName>AXUtilLib</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Microsoft.Dynamics.AX.Security.Instrumentation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>Microsoft.Dynamics.AX.Security.Instrumentation\Microsoft.Dynamics.AX.Security.Instrumentation.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AX\Framework\Tools\ModelManagement\AxUtil.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\AxUtilConfiguration.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\AxUtilContext.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\ConsoleSupport\AXUtilConsole.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\ConsoleSupport\AXUtilConsoleBaseContext.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\ConsoleSupport\ParameterInfo.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\ConsoleSupport\ParameterType.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\ConsoleSupport\ParameterValue.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\ExecutionStatus.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\LicenseGenerator.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\LicenseInfo.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\ParameterConsoleCommandConstants.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\ParameterConsoleConstants.cs" />
-    <Compile Include="AX\Framework\Tools\ModelManagement\Properties\Resources.cs" />
-    <Compile Include="BuildVersion\BuildVersionInfo.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="AX\Framework\Tools\ModelManagement\Properties\Resources.resx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Microsoft.Dynamics.AX.Security.Instrumentation\Microsoft.Dynamics.AX.Security.Instrumentation.dll" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+
 </Project>

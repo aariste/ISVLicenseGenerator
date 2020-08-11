@@ -1,4 +1,4 @@
-﻿namespace ISVLicenseGenerator
+﻿namespace ISVLicenseGeneratorCore
 {
     partial class ISVLicenseGeneratorForm
     {
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ISVLicenseGeneratorForm));
             this.PathTB = new System.Windows.Forms.TextBox();
             this.LicenseCodeTB = new System.Windows.Forms.TextBox();
             this.CustomerTB = new System.Windows.Forms.TextBox();
@@ -62,92 +61,97 @@
             // PathTB
             // 
             this.PathTB.BackColor = System.Drawing.SystemColors.Control;
-            this.PathTB.Location = new System.Drawing.Point(217, 70);
+            this.PathTB.Location = new System.Drawing.Point(217, 88);
+            this.PathTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PathTB.Name = "PathTB";
             this.PathTB.ReadOnly = true;
-            this.PathTB.Size = new System.Drawing.Size(330, 22);
+            this.PathTB.Size = new System.Drawing.Size(330, 27);
             this.PathTB.TabIndex = 0;
             // 
             // LicenseCodeTB
             // 
-            this.LicenseCodeTB.Location = new System.Drawing.Point(217, 98);
+            this.LicenseCodeTB.Location = new System.Drawing.Point(217, 122);
+            this.LicenseCodeTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LicenseCodeTB.Name = "LicenseCodeTB";
-            this.LicenseCodeTB.Size = new System.Drawing.Size(430, 22);
+            this.LicenseCodeTB.Size = new System.Drawing.Size(430, 27);
             this.LicenseCodeTB.TabIndex = 1;
             // 
             // CustomerTB
             // 
-            this.CustomerTB.Location = new System.Drawing.Point(217, 126);
+            this.CustomerTB.Location = new System.Drawing.Point(217, 158);
+            this.CustomerTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CustomerTB.Name = "CustomerTB";
-            this.CustomerTB.Size = new System.Drawing.Size(430, 22);
+            this.CustomerTB.Size = new System.Drawing.Size(430, 27);
             this.CustomerTB.TabIndex = 2;
             // 
             // SerialNumberTB
             // 
-            this.SerialNumberTB.Location = new System.Drawing.Point(217, 154);
+            this.SerialNumberTB.Location = new System.Drawing.Point(217, 192);
+            this.SerialNumberTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SerialNumberTB.Name = "SerialNumberTB";
-            this.SerialNumberTB.Size = new System.Drawing.Size(430, 22);
+            this.SerialNumberTB.Size = new System.Drawing.Size(430, 27);
             this.SerialNumberTB.TabIndex = 3;
             // 
             // PathLbl
             // 
             this.PathLbl.AutoSize = true;
-            this.PathLbl.Location = new System.Drawing.Point(11, 73);
+            this.PathLbl.Location = new System.Drawing.Point(11, 91);
             this.PathLbl.Name = "PathLbl";
-            this.PathLbl.Size = new System.Drawing.Size(56, 17);
+            this.PathLbl.Size = new System.Drawing.Size(57, 20);
             this.PathLbl.TabIndex = 6;
             this.PathLbl.Text = "Path (*)";
             // 
             // UserCountLbl
             // 
             this.UserCountLbl.AutoSize = true;
-            this.UserCountLbl.Location = new System.Drawing.Point(11, 212);
+            this.UserCountLbl.Location = new System.Drawing.Point(11, 265);
             this.UserCountLbl.Name = "UserCountLbl";
-            this.UserCountLbl.Size = new System.Drawing.Size(77, 17);
+            this.UserCountLbl.Size = new System.Drawing.Size(79, 20);
             this.UserCountLbl.TabIndex = 8;
             this.UserCountLbl.Text = "User count";
             // 
             // ExpirationDateLbl
             // 
             this.ExpirationDateLbl.AutoSize = true;
-            this.ExpirationDateLbl.Location = new System.Drawing.Point(11, 187);
+            this.ExpirationDateLbl.Location = new System.Drawing.Point(11, 234);
             this.ExpirationDateLbl.Name = "ExpirationDateLbl";
-            this.ExpirationDateLbl.Size = new System.Drawing.Size(102, 17);
+            this.ExpirationDateLbl.Size = new System.Drawing.Size(110, 20);
             this.ExpirationDateLbl.TabIndex = 9;
             this.ExpirationDateLbl.Text = "Expiration date";
             // 
             // SerialNumberLbl
             // 
             this.SerialNumberLbl.AutoSize = true;
-            this.SerialNumberLbl.Location = new System.Drawing.Point(11, 157);
+            this.SerialNumberLbl.Location = new System.Drawing.Point(11, 196);
             this.SerialNumberLbl.Name = "SerialNumberLbl";
-            this.SerialNumberLbl.Size = new System.Drawing.Size(115, 17);
+            this.SerialNumberLbl.Size = new System.Drawing.Size(121, 20);
             this.SerialNumberLbl.TabIndex = 10;
             this.SerialNumberLbl.Text = "Serial number (*)";
             // 
             // CustomerTenantLbl
             // 
             this.CustomerTenantLbl.AutoSize = true;
-            this.CustomerTenantLbl.Location = new System.Drawing.Point(11, 129);
+            this.CustomerTenantLbl.Location = new System.Drawing.Point(11, 161);
             this.CustomerTenantLbl.Name = "CustomerTenantLbl";
-            this.CustomerTenantLbl.Size = new System.Drawing.Size(131, 17);
+            this.CustomerTenantLbl.Size = new System.Drawing.Size(138, 20);
             this.CustomerTenantLbl.TabIndex = 11;
             this.CustomerTenantLbl.Text = "Customer tenant (*)";
             // 
             // LicenseCodeLbl
             // 
             this.LicenseCodeLbl.AutoSize = true;
-            this.LicenseCodeLbl.Location = new System.Drawing.Point(11, 101);
+            this.LicenseCodeLbl.Location = new System.Drawing.Point(11, 126);
             this.LicenseCodeLbl.Name = "LicenseCodeLbl";
-            this.LicenseCodeLbl.Size = new System.Drawing.Size(111, 17);
+            this.LicenseCodeLbl.Size = new System.Drawing.Size(114, 20);
             this.LicenseCodeLbl.TabIndex = 12;
             this.LicenseCodeLbl.Text = "License code (*)";
             // 
             // GenerateBtn
             // 
-            this.GenerateBtn.Location = new System.Drawing.Point(544, 238);
+            this.GenerateBtn.Location = new System.Drawing.Point(544, 298);
+            this.GenerateBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GenerateBtn.Name = "GenerateBtn";
-            this.GenerateBtn.Size = new System.Drawing.Size(103, 32);
+            this.GenerateBtn.Size = new System.Drawing.Size(103, 40);
             this.GenerateBtn.TabIndex = 13;
             this.GenerateBtn.Text = "Generate";
             this.GenerateBtn.UseVisualStyleBackColor = true;
@@ -156,27 +160,29 @@
             // OutputTB
             // 
             this.OutputTB.Enabled = false;
-            this.OutputTB.Location = new System.Drawing.Point(12, 285);
+            this.OutputTB.Location = new System.Drawing.Point(12, 356);
+            this.OutputTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.OutputTB.Multiline = true;
             this.OutputTB.Name = "OutputTB";
             this.OutputTB.ReadOnly = true;
-            this.OutputTB.Size = new System.Drawing.Size(635, 63);
+            this.OutputTB.Size = new System.Drawing.Size(635, 78);
             this.OutputTB.TabIndex = 14;
             // 
             // ResultLbl
             // 
             this.ResultLbl.AutoSize = true;
-            this.ResultLbl.Location = new System.Drawing.Point(11, 265);
+            this.ResultLbl.Location = new System.Drawing.Point(11, 331);
             this.ResultLbl.Name = "ResultLbl";
-            this.ResultLbl.Size = new System.Drawing.Size(48, 17);
+            this.ResultLbl.Size = new System.Drawing.Size(49, 20);
             this.ResultLbl.TabIndex = 15;
             this.ResultLbl.Text = "Result";
             // 
             // BrowseBtn
             // 
-            this.BrowseBtn.Location = new System.Drawing.Point(553, 69);
+            this.BrowseBtn.Location = new System.Drawing.Point(553, 86);
+            this.BrowseBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.BrowseBtn.Name = "BrowseBtn";
-            this.BrowseBtn.Size = new System.Drawing.Size(94, 23);
+            this.BrowseBtn.Size = new System.Drawing.Size(94, 29);
             this.BrowseBtn.TabIndex = 16;
             this.BrowseBtn.Text = "Browse...";
             this.BrowseBtn.UseVisualStyleBackColor = true;
@@ -185,26 +191,28 @@
             // ExpirationDatePicker
             // 
             this.ExpirationDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ExpirationDatePicker.Location = new System.Drawing.Point(217, 182);
+            this.ExpirationDatePicker.Location = new System.Drawing.Point(217, 228);
+            this.ExpirationDatePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ExpirationDatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.ExpirationDatePicker.Name = "ExpirationDatePicker";
-            this.ExpirationDatePicker.Size = new System.Drawing.Size(430, 22);
+            this.ExpirationDatePicker.Size = new System.Drawing.Size(430, 27);
             this.ExpirationDatePicker.TabIndex = 17;
             this.ExpirationDatePicker.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // UserCount
             // 
-            this.UserCount.Location = new System.Drawing.Point(217, 210);
+            this.UserCount.Location = new System.Drawing.Point(217, 262);
+            this.UserCount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.UserCount.Name = "UserCount";
-            this.UserCount.Size = new System.Drawing.Size(430, 22);
+            this.UserCount.Size = new System.Drawing.Size(430, 27);
             this.UserCount.TabIndex = 18;
             // 
             // MandatoryLbl
             // 
             this.MandatoryLbl.AutoSize = true;
-            this.MandatoryLbl.Location = new System.Drawing.Point(6, 238);
+            this.MandatoryLbl.Location = new System.Drawing.Point(6, 298);
             this.MandatoryLbl.Name = "MandatoryLbl";
-            this.MandatoryLbl.Size = new System.Drawing.Size(135, 17);
+            this.MandatoryLbl.Size = new System.Drawing.Size(145, 20);
             this.MandatoryLbl.TabIndex = 19;
             this.MandatoryLbl.Text = " (*) Mandatory fields";
             // 
@@ -253,9 +261,10 @@
             // SHA1LicenceRadioBtn
             // 
             this.SHA1LicenceRadioBtn.AutoSize = true;
-            this.SHA1LicenceRadioBtn.Location = new System.Drawing.Point(217, 43);
+            this.SHA1LicenceRadioBtn.Location = new System.Drawing.Point(217, 54);
+            this.SHA1LicenceRadioBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SHA1LicenceRadioBtn.Name = "SHA1LicenceRadioBtn";
-            this.SHA1LicenceRadioBtn.Size = new System.Drawing.Size(65, 21);
+            this.SHA1LicenceRadioBtn.Size = new System.Drawing.Size(67, 24);
             this.SHA1LicenceRadioBtn.TabIndex = 21;
             this.SHA1LicenceRadioBtn.Text = "SHA1";
             this.SHA1LicenceRadioBtn.UseVisualStyleBackColor = true;
@@ -265,9 +274,10 @@
             // 
             this.SHA256LicenceRadioBtn.AutoSize = true;
             this.SHA256LicenceRadioBtn.Checked = true;
-            this.SHA256LicenceRadioBtn.Location = new System.Drawing.Point(333, 43);
+            this.SHA256LicenceRadioBtn.Location = new System.Drawing.Point(333, 54);
+            this.SHA256LicenceRadioBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SHA256LicenceRadioBtn.Name = "SHA256LicenceRadioBtn";
-            this.SHA256LicenceRadioBtn.Size = new System.Drawing.Size(81, 21);
+            this.SHA256LicenceRadioBtn.Size = new System.Drawing.Size(83, 24);
             this.SHA256LicenceRadioBtn.TabIndex = 22;
             this.SHA256LicenceRadioBtn.TabStop = true;
             this.SHA256LicenceRadioBtn.Text = "SHA256";
@@ -277,17 +287,17 @@
             // SigningAlgorithmLbl
             // 
             this.SigningAlgorithmLbl.AutoSize = true;
-            this.SigningAlgorithmLbl.Location = new System.Drawing.Point(12, 45);
+            this.SigningAlgorithmLbl.Location = new System.Drawing.Point(12, 56);
             this.SigningAlgorithmLbl.Name = "SigningAlgorithmLbl";
-            this.SigningAlgorithmLbl.Size = new System.Drawing.Size(117, 17);
+            this.SigningAlgorithmLbl.Size = new System.Drawing.Size(128, 20);
             this.SigningAlgorithmLbl.TabIndex = 23;
             this.SigningAlgorithmLbl.Text = "Signing algorithm";
             // 
             // ISVLicenseGeneratorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 359);
+            this.ClientSize = new System.Drawing.Size(663, 449);
             this.Controls.Add(this.SigningAlgorithmLbl);
             this.Controls.Add(this.SHA256LicenceRadioBtn);
             this.Controls.Add(this.SHA1LicenceRadioBtn);
@@ -309,7 +319,7 @@
             this.Controls.Add(this.LicenseCodeTB);
             this.Controls.Add(this.PathTB);
             this.Controls.Add(this.MainMenuStrip);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ISVLicenseGeneratorForm";
             this.Text = "ISV License Generator";
             ((System.ComponentModel.ISupportInitialize)(this.UserCount)).EndInit();
