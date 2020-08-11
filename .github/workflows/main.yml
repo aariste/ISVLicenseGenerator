@@ -8,6 +8,6 @@ jobs:
     steps:      
       - uses: actions/checkout@netcore
       - uses: actions/setup-dotnet@netcore
-      with:
+        with:
         dotnet-version: '3.1.x' # SDK Version to use; x will use the latest version of the 3.1 channel
       - run: dotnet build <my project>censeGenerator.sln
