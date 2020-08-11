@@ -4,10 +4,33 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+    <Version>0.3</Version>
+    <PackageProjectUrl>https://github.com/aariste/ISVLicenseGenerator</PackageProjectUrl>
+    <PackageIcon>fno.png</PackageIcon>
+    <Authors>Adrià Ariste Santacreu</Authors>
+    <Company>Axazure</Company>
+    <Product>ISV License Generator</Product>
+    <RepositoryUrl>https://github.com/aariste/ISVLicenseGenerator</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\AASAXUtilLib\AASAXUtilLib.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

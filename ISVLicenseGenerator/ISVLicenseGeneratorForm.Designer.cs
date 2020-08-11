@@ -1,4 +1,8 @@
-﻿namespace ISVLicenseGeneratorCore
+﻿using ISVLicenseGenerator.Properties;
+using Microsoft.VisualBasic.CompilerServices;
+using System.Windows.Forms.PropertyGridInternal;
+
+namespace ISVLicenseGeneratorCore
 {
     partial class ISVLicenseGeneratorForm
     {
@@ -322,6 +326,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "ISVLicenseGeneratorForm";
             this.Text = "ISV License Generator";
+            this.Icon = Resources.Icon;
             ((System.ComponentModel.ISupportInitialize)(this.UserCount)).EndInit();
             this.MainMenuStrip.ResumeLayout(false);
             this.MainMenuStrip.PerformLayout();
