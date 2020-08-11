@@ -15,6 +15,6 @@ You need to install the drivers and management software of your USB token first.
 - Customer tenant: the customer's tenant name (from [this screenshot](https://docs.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/dev-tools/media/isv15.png)).
 - Serial number: the customer's tenant ID (labeled "Serial number" in the screenshot linked in the previous line).
 
-You can find a bit more information on [this blog](https://ariste.info/en/2019/12/create-an-isv-license-from-a-cryptographic-usb-token/) post on https://ariste.info
+You can find a bit more information on [this blog](https://ariste.info/en/2019/12/create-an-isv-license-from-a-cryptographic-usb-token/) post about v0.1 and [this one](https://ariste.info/en/2020/08/isv-license-generator-sha-2-support/) about v0.2 on https://ariste.info
 
 THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
