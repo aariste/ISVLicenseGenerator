@@ -46,15 +46,8 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             }
         }
 
-        public bool GenerateLicense()
+        public bool GenerateLicense(X509Certificate2Collection scollection)
         {
-            X509Store store = new X509Store("My", StoreLocation.CurrentUser);
-            store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
-
-            X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
-            X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
-            X509Certificate2Collection scollection = X509Certificate2UI.SelectFromCollection(fcollection, "Certificate Select", "Select a certificate from the following list to sign the license", X509SelectionFlag.SingleSelection);
-
             if (scollection.Count == 0)
             {
                 throw new System.NullReferenceException("No certificate loaded.");

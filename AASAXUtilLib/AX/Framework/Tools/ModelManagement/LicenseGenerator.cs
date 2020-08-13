@@ -1,5 +1,4 @@
 ﻿using Microsoft.Dynamics.AX.Framework.Tools.ModelManagement.Properties;
-using Microsoft.Dynamics.AX.Security.Instrumentation;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -136,9 +135,9 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
 
         private string GenerateSignature(X509Certificate2 certificate)
         {
-            byte[] bytes = new UnicodeEncoding().GetBytes((this.licenseInfo.Customer + this.licenseInfo.SerialNumber + this.formattedDate + this.licenseInfo.LicenseCode + this.formattedUserCount + this.formattedTimestamp).ToUpperInvariant());
-            RSACryptoServiceProvider privateKey = certificate.PrivateKey as RSACryptoServiceProvider;
-            byte[] numArray1 = this.SignatureVersion == 1 ? this.SignDataLegacy(privateKey, bytes) : this.SignData(privateKey, bytes);
+            byte[] bytes = new UnicodeEncoding().GetBytes((this.licenseInfo.Customer + this.licenseInfo.SerialNumber + this.formattedDate + this.licenseInfo.LicenseCode + this.formattedUserCount + this.formattedTimestamp).ToUpperInvariant());            
+            RSA rsa = certificate.GetRSAPrivateKey();            
+            byte[] numArray1 = this.SignatureVersion == 1 ? this.SignDataLegacy(rsa, bytes) : this.SignData(rsa, bytes);
             byte[] inArray = new byte[((IEnumerable<byte>)numArray1).Count<byte>() + 1];
             int num1 = 0;
             byte[] numArray2 = inArray;
@@ -151,33 +150,29 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             return Convert.ToBase64String(inArray);
         }
 
-        private byte[] SignData(RSACryptoServiceProvider rsaCryptoServiceProvider, byte[] data)
+        private byte[] SignData(RSA rsa, byte[] data)
         {
             byte[] numArray = (byte[])null;
             try
             {
-                SecurityManagementEventSource.EventWriteHashingCallStackMethod("LicenseGenerator_SignData", "SHA256", 256, string.Empty, Environment.StackTrace);
-                numArray = rsaCryptoServiceProvider.SignData(data, CryptoConfig.CreateFromName("SHA256"));
+                numArray = rsa.SignData(data, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
             }
             catch (Exception ex)
             {
-                SecurityManagementEventSource.EventWriteLicenseGeneratorSignDataException(ex.Message, ex.Source, ex.StackTrace);
-                SecurityManagementEventSource.EventWriteLicenseGeneratorSignDataSHA256Failed();
+                throw;
             }
             return numArray;
         }
 
         [SuppressMessage("Microsoft.Cryptographic.Standard", "CA5354:SHA1CannotBeUsed", Justification = "Supporting SHA1 due to business decisions that industry has not taken SHA2 widely, exception will be fired on this case.")]
-        private byte[] SignDataLegacy(RSACryptoServiceProvider rsaCryptoServiceProvider, byte[] data)
+        private byte[] SignDataLegacy(RSA rsa, byte[] data)
         {
             try
-            {
-                SecurityManagementEventSource.EventWriteHashingCallStackMethod("LicenseGenerator_SignData", "SHA1", 160, string.Empty, Environment.StackTrace);
-                return rsaCryptoServiceProvider.SignData(data, (object)new SHA1Managed());
+            {             
+                return rsa.SignData(data, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
             }
             catch (Exception ex)
-            {
-                SecurityManagementEventSource.EventWriteLicenseGeneratorSignDataException(ex.Message, ex.Source, ex.StackTrace);
+            {                
                 throw;
             }
         }
