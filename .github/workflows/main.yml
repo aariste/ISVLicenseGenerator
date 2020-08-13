@@ -1,15 +1,23 @@
 name: CI
+
 on:
   push:
-    branches: [ master ]
+    branches: [ netcore ]
   pull_request:
-    branches: [ master ]
+    branches: [ netcore ]
+
 jobs:
   build:
+
     runs-on: windows-2019
+
     steps:
-      - uses: actions/checkout@v1
-      - name: Build DotNET
-        run: |
-           cd "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\"
-           .\MSBuild.exe $Env:GITHUB_WORKSPACE\ISVLicenseGenerator.sln
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
+    - name: Install dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
