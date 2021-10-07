@@ -157,7 +157,7 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             {
                 numArray = rsa.SignData(data, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
             }
-            catch (Exception ex)
+            catch
             {
                 throw;
             }
@@ -171,7 +171,7 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             {             
                 return rsa.SignData(data, HashAlgorithmName.SHA1, RSASignaturePadding.Pkcs1);
             }
-            catch (Exception ex)
+            catch
             {                
                 throw;
             }
