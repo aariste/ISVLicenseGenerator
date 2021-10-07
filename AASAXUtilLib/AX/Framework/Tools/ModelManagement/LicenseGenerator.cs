@@ -152,16 +152,14 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
 
         private byte[] SignData(RSA rsa, byte[] data)
         {
-            byte[] numArray = (byte[])null;
             try
             {
-                numArray = rsa.SignData(data, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
+                return rsa.SignData(data, HashAlgorithmName.SHA256, RSASignaturePadding.Pkcs1);
             }
             catch
             {
                 throw;
             }
-            return numArray;
         }
 
         [SuppressMessage("Microsoft.Cryptographic.Standard", "CA5354:SHA1CannotBeUsed", Justification = "Supporting SHA1 due to business decisions that industry has not taken SHA2 widely, exception will be fired on this case.")]

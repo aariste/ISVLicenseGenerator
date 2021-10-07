@@ -265,6 +265,7 @@ namespace ISVLicenseGeneratorCore
             // SHA1LicenceRadioBtn
             // 
             this.SHA1LicenceRadioBtn.AutoSize = true;
+            this.SHA1LicenceRadioBtn.Checked = true;
             this.SHA1LicenceRadioBtn.Location = new System.Drawing.Point(217, 54);
             this.SHA1LicenceRadioBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SHA1LicenceRadioBtn.Name = "SHA1LicenceRadioBtn";
@@ -277,7 +278,7 @@ namespace ISVLicenseGeneratorCore
             // SHA256LicenceRadioBtn
             // 
             this.SHA256LicenceRadioBtn.AutoSize = true;
-            this.SHA256LicenceRadioBtn.Checked = true;
+            this.SHA256LicenceRadioBtn.Checked = false;
             this.SHA256LicenceRadioBtn.Location = new System.Drawing.Point(333, 54);
             this.SHA256LicenceRadioBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.SHA256LicenceRadioBtn.Name = "SHA256LicenceRadioBtn";
@@ -286,6 +287,7 @@ namespace ISVLicenseGeneratorCore
             this.SHA256LicenceRadioBtn.TabStop = true;
             this.SHA256LicenceRadioBtn.Text = "SHA256";
             this.SHA256LicenceRadioBtn.UseVisualStyleBackColor = true;
+            this.SHA256LicenceRadioBtn.Enabled = false;
             this.SHA256LicenceRadioBtn.CheckedChanged += new System.EventHandler(this.SHA256LicenceRadioBtn_CheckedChanged);
             // 
             // SigningAlgorithmLbl
