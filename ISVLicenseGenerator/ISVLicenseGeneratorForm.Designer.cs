@@ -32,309 +32,293 @@ namespace ISVLicenseGeneratorCore
         /// </summary>
         private void InitializeComponent()
         {
-            this.PathTB = new System.Windows.Forms.TextBox();
-            this.LicenseCodeTB = new System.Windows.Forms.TextBox();
-            this.CustomerTB = new System.Windows.Forms.TextBox();
-            this.SerialNumberTB = new System.Windows.Forms.TextBox();
-            this.PathLbl = new System.Windows.Forms.Label();
-            this.UserCountLbl = new System.Windows.Forms.Label();
-            this.ExpirationDateLbl = new System.Windows.Forms.Label();
-            this.SerialNumberLbl = new System.Windows.Forms.Label();
-            this.CustomerTenantLbl = new System.Windows.Forms.Label();
-            this.LicenseCodeLbl = new System.Windows.Forms.Label();
-            this.GenerateBtn = new System.Windows.Forms.Button();
-            this.OutputTB = new System.Windows.Forms.TextBox();
-            this.ResultLbl = new System.Windows.Forms.Label();
-            this.BrowseBtn = new System.Windows.Forms.Button();
-            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.ExpirationDatePicker = new System.Windows.Forms.DateTimePicker();
-            this.UserCount = new System.Windows.Forms.NumericUpDown();
-            this.MandatoryLbl = new System.Windows.Forms.Label();
-            this.MainMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SHA1LicenceRadioBtn = new System.Windows.Forms.RadioButton();
-            this.SHA256LicenceRadioBtn = new System.Windows.Forms.RadioButton();
-            this.SigningAlgorithmLbl = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.UserCount)).BeginInit();
-            this.MainMenuStrip.SuspendLayout();
-            this.SuspendLayout();
+            PathTB = new System.Windows.Forms.TextBox();
+            LicenseCodeTB = new System.Windows.Forms.TextBox();
+            CustomerTB = new System.Windows.Forms.TextBox();
+            SerialNumberTB = new System.Windows.Forms.TextBox();
+            PathLbl = new System.Windows.Forms.Label();
+            UserCountLbl = new System.Windows.Forms.Label();
+            ExpirationDateLbl = new System.Windows.Forms.Label();
+            SerialNumberLbl = new System.Windows.Forms.Label();
+            CustomerTenantLbl = new System.Windows.Forms.Label();
+            LicenseCodeLbl = new System.Windows.Forms.Label();
+            GenerateBtn = new System.Windows.Forms.Button();
+            OutputTB = new System.Windows.Forms.TextBox();
+            ResultLbl = new System.Windows.Forms.Label();
+            BrowseBtn = new System.Windows.Forms.Button();
+            saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            ExpirationDatePicker = new System.Windows.Forms.DateTimePicker();
+            UserCount = new System.Windows.Forms.NumericUpDown();
+            MandatoryLbl = new System.Windows.Forms.Label();
+            MainMenuStrip = new System.Windows.Forms.MenuStrip();
+            fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            usageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            SHA1LicenceRadioBtn = new System.Windows.Forms.RadioButton();
+            SHA256LicenceRadioBtn = new System.Windows.Forms.RadioButton();
+            SigningAlgorithmLbl = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)UserCount).BeginInit();
+            MainMenuStrip.SuspendLayout();
+            SuspendLayout();
             // 
             // PathTB
             // 
-            this.PathTB.BackColor = System.Drawing.SystemColors.Control;
-            this.PathTB.Location = new System.Drawing.Point(217, 88);
-            this.PathTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.PathTB.Name = "PathTB";
-            this.PathTB.ReadOnly = true;
-            this.PathTB.Size = new System.Drawing.Size(330, 27);
-            this.PathTB.TabIndex = 0;
+            PathTB.BackColor = System.Drawing.SystemColors.Control;
+            PathTB.Location = new System.Drawing.Point(190, 66);
+            PathTB.Name = "PathTB";
+            PathTB.ReadOnly = true;
+            PathTB.Size = new System.Drawing.Size(289, 23);
+            PathTB.TabIndex = 0;
             // 
             // LicenseCodeTB
             // 
-            this.LicenseCodeTB.Location = new System.Drawing.Point(217, 122);
-            this.LicenseCodeTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.LicenseCodeTB.Name = "LicenseCodeTB";
-            this.LicenseCodeTB.Size = new System.Drawing.Size(430, 27);
-            this.LicenseCodeTB.TabIndex = 1;
+            LicenseCodeTB.Location = new System.Drawing.Point(190, 92);
+            LicenseCodeTB.Name = "LicenseCodeTB";
+            LicenseCodeTB.Size = new System.Drawing.Size(377, 23);
+            LicenseCodeTB.TabIndex = 1;
             // 
             // CustomerTB
             // 
-            this.CustomerTB.Location = new System.Drawing.Point(217, 158);
-            this.CustomerTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.CustomerTB.Name = "CustomerTB";
-            this.CustomerTB.Size = new System.Drawing.Size(430, 27);
-            this.CustomerTB.TabIndex = 2;
+            CustomerTB.Location = new System.Drawing.Point(190, 118);
+            CustomerTB.Name = "CustomerTB";
+            CustomerTB.Size = new System.Drawing.Size(377, 23);
+            CustomerTB.TabIndex = 2;
             // 
             // SerialNumberTB
             // 
-            this.SerialNumberTB.Location = new System.Drawing.Point(217, 192);
-            this.SerialNumberTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.SerialNumberTB.Name = "SerialNumberTB";
-            this.SerialNumberTB.Size = new System.Drawing.Size(430, 27);
-            this.SerialNumberTB.TabIndex = 3;
+            SerialNumberTB.Location = new System.Drawing.Point(190, 144);
+            SerialNumberTB.Name = "SerialNumberTB";
+            SerialNumberTB.Size = new System.Drawing.Size(377, 23);
+            SerialNumberTB.TabIndex = 3;
             // 
             // PathLbl
             // 
-            this.PathLbl.AutoSize = true;
-            this.PathLbl.Location = new System.Drawing.Point(11, 91);
-            this.PathLbl.Name = "PathLbl";
-            this.PathLbl.Size = new System.Drawing.Size(57, 20);
-            this.PathLbl.TabIndex = 6;
-            this.PathLbl.Text = "Path (*)";
+            PathLbl.AutoSize = true;
+            PathLbl.Location = new System.Drawing.Point(10, 68);
+            PathLbl.Name = "PathLbl";
+            PathLbl.Size = new System.Drawing.Size(47, 15);
+            PathLbl.TabIndex = 6;
+            PathLbl.Text = "Path (*)";
             // 
             // UserCountLbl
             // 
-            this.UserCountLbl.AutoSize = true;
-            this.UserCountLbl.Location = new System.Drawing.Point(11, 265);
-            this.UserCountLbl.Name = "UserCountLbl";
-            this.UserCountLbl.Size = new System.Drawing.Size(79, 20);
-            this.UserCountLbl.TabIndex = 8;
-            this.UserCountLbl.Text = "User count";
+            UserCountLbl.AutoSize = true;
+            UserCountLbl.Location = new System.Drawing.Point(10, 199);
+            UserCountLbl.Name = "UserCountLbl";
+            UserCountLbl.Size = new System.Drawing.Size(64, 15);
+            UserCountLbl.TabIndex = 8;
+            UserCountLbl.Text = "User count";
             // 
             // ExpirationDateLbl
             // 
-            this.ExpirationDateLbl.AutoSize = true;
-            this.ExpirationDateLbl.Location = new System.Drawing.Point(11, 234);
-            this.ExpirationDateLbl.Name = "ExpirationDateLbl";
-            this.ExpirationDateLbl.Size = new System.Drawing.Size(110, 20);
-            this.ExpirationDateLbl.TabIndex = 9;
-            this.ExpirationDateLbl.Text = "Expiration date";
+            ExpirationDateLbl.AutoSize = true;
+            ExpirationDateLbl.Location = new System.Drawing.Point(10, 176);
+            ExpirationDateLbl.Name = "ExpirationDateLbl";
+            ExpirationDateLbl.Size = new System.Drawing.Size(86, 15);
+            ExpirationDateLbl.TabIndex = 9;
+            ExpirationDateLbl.Text = "Expiration date";
             // 
             // SerialNumberLbl
             // 
-            this.SerialNumberLbl.AutoSize = true;
-            this.SerialNumberLbl.Location = new System.Drawing.Point(11, 196);
-            this.SerialNumberLbl.Name = "SerialNumberLbl";
-            this.SerialNumberLbl.Size = new System.Drawing.Size(121, 20);
-            this.SerialNumberLbl.TabIndex = 10;
-            this.SerialNumberLbl.Text = "Serial number (*)";
+            SerialNumberLbl.AutoSize = true;
+            SerialNumberLbl.Location = new System.Drawing.Point(10, 147);
+            SerialNumberLbl.Name = "SerialNumberLbl";
+            SerialNumberLbl.Size = new System.Drawing.Size(96, 15);
+            SerialNumberLbl.TabIndex = 10;
+            SerialNumberLbl.Text = "Serial number (*)";
             // 
             // CustomerTenantLbl
             // 
-            this.CustomerTenantLbl.AutoSize = true;
-            this.CustomerTenantLbl.Location = new System.Drawing.Point(11, 161);
-            this.CustomerTenantLbl.Name = "CustomerTenantLbl";
-            this.CustomerTenantLbl.Size = new System.Drawing.Size(138, 20);
-            this.CustomerTenantLbl.TabIndex = 11;
-            this.CustomerTenantLbl.Text = "Customer tenant (*)";
+            CustomerTenantLbl.AutoSize = true;
+            CustomerTenantLbl.Location = new System.Drawing.Point(10, 121);
+            CustomerTenantLbl.Name = "CustomerTenantLbl";
+            CustomerTenantLbl.Size = new System.Drawing.Size(112, 15);
+            CustomerTenantLbl.TabIndex = 11;
+            CustomerTenantLbl.Text = "Customer tenant (*)";
             // 
             // LicenseCodeLbl
             // 
-            this.LicenseCodeLbl.AutoSize = true;
-            this.LicenseCodeLbl.Location = new System.Drawing.Point(11, 126);
-            this.LicenseCodeLbl.Name = "LicenseCodeLbl";
-            this.LicenseCodeLbl.Size = new System.Drawing.Size(114, 20);
-            this.LicenseCodeLbl.TabIndex = 12;
-            this.LicenseCodeLbl.Text = "License code (*)";
+            LicenseCodeLbl.AutoSize = true;
+            LicenseCodeLbl.Location = new System.Drawing.Point(10, 94);
+            LicenseCodeLbl.Name = "LicenseCodeLbl";
+            LicenseCodeLbl.Size = new System.Drawing.Size(91, 15);
+            LicenseCodeLbl.TabIndex = 12;
+            LicenseCodeLbl.Text = "License code (*)";
             // 
             // GenerateBtn
             // 
-            this.GenerateBtn.Location = new System.Drawing.Point(544, 298);
-            this.GenerateBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.GenerateBtn.Name = "GenerateBtn";
-            this.GenerateBtn.Size = new System.Drawing.Size(103, 40);
-            this.GenerateBtn.TabIndex = 13;
-            this.GenerateBtn.Text = "Generate";
-            this.GenerateBtn.UseVisualStyleBackColor = true;
-            this.GenerateBtn.Click += new System.EventHandler(this.GenerateBtn_Click);
+            GenerateBtn.Location = new System.Drawing.Point(476, 224);
+            GenerateBtn.Name = "GenerateBtn";
+            GenerateBtn.Size = new System.Drawing.Size(90, 30);
+            GenerateBtn.TabIndex = 13;
+            GenerateBtn.Text = "Generate";
+            GenerateBtn.UseVisualStyleBackColor = true;
+            GenerateBtn.Click += GenerateBtn_Click;
             // 
             // OutputTB
             // 
-            this.OutputTB.Enabled = false;
-            this.OutputTB.Location = new System.Drawing.Point(12, 356);
-            this.OutputTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.OutputTB.Multiline = true;
-            this.OutputTB.Name = "OutputTB";
-            this.OutputTB.ReadOnly = true;
-            this.OutputTB.Size = new System.Drawing.Size(635, 78);
-            this.OutputTB.TabIndex = 14;
+            OutputTB.Enabled = false;
+            OutputTB.Location = new System.Drawing.Point(10, 267);
+            OutputTB.Multiline = true;
+            OutputTB.Name = "OutputTB";
+            OutputTB.ReadOnly = true;
+            OutputTB.Size = new System.Drawing.Size(556, 60);
+            OutputTB.TabIndex = 14;
             // 
             // ResultLbl
             // 
-            this.ResultLbl.AutoSize = true;
-            this.ResultLbl.Location = new System.Drawing.Point(11, 331);
-            this.ResultLbl.Name = "ResultLbl";
-            this.ResultLbl.Size = new System.Drawing.Size(49, 20);
-            this.ResultLbl.TabIndex = 15;
-            this.ResultLbl.Text = "Result";
+            ResultLbl.AutoSize = true;
+            ResultLbl.Location = new System.Drawing.Point(10, 248);
+            ResultLbl.Name = "ResultLbl";
+            ResultLbl.Size = new System.Drawing.Size(39, 15);
+            ResultLbl.TabIndex = 15;
+            ResultLbl.Text = "Result";
             // 
             // BrowseBtn
             // 
-            this.BrowseBtn.Location = new System.Drawing.Point(553, 86);
-            this.BrowseBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.BrowseBtn.Name = "BrowseBtn";
-            this.BrowseBtn.Size = new System.Drawing.Size(94, 29);
-            this.BrowseBtn.TabIndex = 16;
-            this.BrowseBtn.Text = "Browse...";
-            this.BrowseBtn.UseVisualStyleBackColor = true;
-            this.BrowseBtn.Click += new System.EventHandler(this.BrowseBtn_Click);
+            BrowseBtn.Location = new System.Drawing.Point(484, 64);
+            BrowseBtn.Name = "BrowseBtn";
+            BrowseBtn.Size = new System.Drawing.Size(82, 22);
+            BrowseBtn.TabIndex = 16;
+            BrowseBtn.Text = "Browse...";
+            BrowseBtn.UseVisualStyleBackColor = true;
+            BrowseBtn.Click += BrowseBtn_Click;
             // 
             // ExpirationDatePicker
             // 
-            this.ExpirationDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.ExpirationDatePicker.Location = new System.Drawing.Point(217, 228);
-            this.ExpirationDatePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ExpirationDatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.ExpirationDatePicker.Name = "ExpirationDatePicker";
-            this.ExpirationDatePicker.Size = new System.Drawing.Size(430, 27);
-            this.ExpirationDatePicker.TabIndex = 17;
-            this.ExpirationDatePicker.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            ExpirationDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            ExpirationDatePicker.Location = new System.Drawing.Point(190, 171);
+            ExpirationDatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            ExpirationDatePicker.Name = "ExpirationDatePicker";
+            ExpirationDatePicker.Size = new System.Drawing.Size(377, 23);
+            ExpirationDatePicker.TabIndex = 17;
+            ExpirationDatePicker.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // UserCount
             // 
-            this.UserCount.Location = new System.Drawing.Point(217, 262);
-            this.UserCount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.UserCount.Name = "UserCount";
-            this.UserCount.Size = new System.Drawing.Size(430, 27);
-            this.UserCount.TabIndex = 18;
+            UserCount.Location = new System.Drawing.Point(190, 196);
+            UserCount.Name = "UserCount";
+            UserCount.Size = new System.Drawing.Size(376, 23);
+            UserCount.TabIndex = 18;
             // 
             // MandatoryLbl
             // 
-            this.MandatoryLbl.AutoSize = true;
-            this.MandatoryLbl.Location = new System.Drawing.Point(6, 298);
-            this.MandatoryLbl.Name = "MandatoryLbl";
-            this.MandatoryLbl.Size = new System.Drawing.Size(145, 20);
-            this.MandatoryLbl.TabIndex = 19;
-            this.MandatoryLbl.Text = " (*) Mandatory fields";
+            MandatoryLbl.AutoSize = true;
+            MandatoryLbl.Location = new System.Drawing.Point(5, 224);
+            MandatoryLbl.Name = "MandatoryLbl";
+            MandatoryLbl.Size = new System.Drawing.Size(115, 15);
+            MandatoryLbl.TabIndex = 19;
+            MandatoryLbl.Text = " (*) Mandatory fields";
             // 
             // MainMenuStrip
             // 
-            this.MainMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.MainMenuStrip.Location = new System.Drawing.Point(0, 0);
-            this.MainMenuStrip.Name = "MainMenuStrip";
-            this.MainMenuStrip.Size = new System.Drawing.Size(663, 28);
-            this.MainMenuStrip.TabIndex = 20;
-            this.MainMenuStrip.Text = "menuStrip1";
+            MainMenuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
+            MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
+            MainMenuStrip.Location = new System.Drawing.Point(0, 0);
+            MainMenuStrip.Name = "MainMenuStrip";
+            MainMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            MainMenuStrip.Size = new System.Drawing.Size(580, 24);
+            MainMenuStrip.TabIndex = 20;
+            MainMenuStrip.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
-            this.fileToolStripMenuItem.Text = "File";
+            fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { exitToolStripMenuItem });
+            fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            exitToolStripMenuItem.Text = "Exit";
+            exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.usageToolStripMenuItem});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
-            this.helpToolStripMenuItem.Text = "Help";
+            helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { usageToolStripMenuItem });
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            helpToolStripMenuItem.Text = "Help";
             // 
             // usageToolStripMenuItem
             // 
-            this.usageToolStripMenuItem.Name = "usageToolStripMenuItem";
-            this.usageToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
-            this.usageToolStripMenuItem.Text = "Usage";
-            this.usageToolStripMenuItem.Click += new System.EventHandler(this.usageToolStripMenuItem_Click);
+            usageToolStripMenuItem.Name = "usageToolStripMenuItem";
+            usageToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            usageToolStripMenuItem.Text = "Usage";
+            usageToolStripMenuItem.Click += usageToolStripMenuItem_Click;
             // 
             // SHA1LicenceRadioBtn
             // 
-            this.SHA1LicenceRadioBtn.AutoSize = true;
-            this.SHA1LicenceRadioBtn.Checked = true;
-            this.SHA1LicenceRadioBtn.Location = new System.Drawing.Point(217, 54);
-            this.SHA1LicenceRadioBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.SHA1LicenceRadioBtn.Name = "SHA1LicenceRadioBtn";
-            this.SHA1LicenceRadioBtn.Size = new System.Drawing.Size(67, 24);
-            this.SHA1LicenceRadioBtn.TabIndex = 21;
-            this.SHA1LicenceRadioBtn.Text = "SHA1";
-            this.SHA1LicenceRadioBtn.UseVisualStyleBackColor = true;
-            this.SHA1LicenceRadioBtn.CheckedChanged += new System.EventHandler(this.SHA1LicenceRadioBtn_CheckedChanged);
+            SHA1LicenceRadioBtn.AutoSize = true;
+            SHA1LicenceRadioBtn.Checked = true;
+            SHA1LicenceRadioBtn.Location = new System.Drawing.Point(190, 40);
+            SHA1LicenceRadioBtn.Name = "SHA1LicenceRadioBtn";
+            SHA1LicenceRadioBtn.Size = new System.Drawing.Size(54, 19);
+            SHA1LicenceRadioBtn.TabIndex = 21;
+            SHA1LicenceRadioBtn.TabStop = true;
+            SHA1LicenceRadioBtn.Text = "SHA1";
+            SHA1LicenceRadioBtn.UseVisualStyleBackColor = true;
+            SHA1LicenceRadioBtn.CheckedChanged += SHA1LicenceRadioBtn_CheckedChanged;
             // 
             // SHA256LicenceRadioBtn
             // 
-            this.SHA256LicenceRadioBtn.AutoSize = true;
-            this.SHA256LicenceRadioBtn.Checked = false;
-            this.SHA256LicenceRadioBtn.Location = new System.Drawing.Point(333, 54);
-            this.SHA256LicenceRadioBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.SHA256LicenceRadioBtn.Name = "SHA256LicenceRadioBtn";
-            this.SHA256LicenceRadioBtn.Size = new System.Drawing.Size(83, 24);
-            this.SHA256LicenceRadioBtn.TabIndex = 22;
-            this.SHA256LicenceRadioBtn.TabStop = true;
-            this.SHA256LicenceRadioBtn.Text = "SHA256";
-            this.SHA256LicenceRadioBtn.UseVisualStyleBackColor = true;
-            this.SHA256LicenceRadioBtn.Enabled = false;
-            this.SHA256LicenceRadioBtn.CheckedChanged += new System.EventHandler(this.SHA256LicenceRadioBtn_CheckedChanged);
+            SHA256LicenceRadioBtn.AutoSize = true;
+            SHA256LicenceRadioBtn.Enabled = false;
+            SHA256LicenceRadioBtn.Location = new System.Drawing.Point(291, 40);
+            SHA256LicenceRadioBtn.Name = "SHA256LicenceRadioBtn";
+            SHA256LicenceRadioBtn.Size = new System.Drawing.Size(66, 19);
+            SHA256LicenceRadioBtn.TabIndex = 22;
+            SHA256LicenceRadioBtn.TabStop = true;
+            SHA256LicenceRadioBtn.Text = "SHA256";
+            SHA256LicenceRadioBtn.UseVisualStyleBackColor = true;
+            SHA256LicenceRadioBtn.CheckedChanged += SHA256LicenceRadioBtn_CheckedChanged;
             // 
             // SigningAlgorithmLbl
             // 
-            this.SigningAlgorithmLbl.AutoSize = true;
-            this.SigningAlgorithmLbl.Location = new System.Drawing.Point(12, 56);
-            this.SigningAlgorithmLbl.Name = "SigningAlgorithmLbl";
-            this.SigningAlgorithmLbl.Size = new System.Drawing.Size(128, 20);
-            this.SigningAlgorithmLbl.TabIndex = 23;
-            this.SigningAlgorithmLbl.Text = "Signing algorithm";
+            SigningAlgorithmLbl.AutoSize = true;
+            SigningAlgorithmLbl.Location = new System.Drawing.Point(10, 42);
+            SigningAlgorithmLbl.Name = "SigningAlgorithmLbl";
+            SigningAlgorithmLbl.Size = new System.Drawing.Size(102, 15);
+            SigningAlgorithmLbl.TabIndex = 23;
+            SigningAlgorithmLbl.Text = "Signing algorithm";
             // 
             // ISVLicenseGeneratorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 449);
-            this.Controls.Add(this.SigningAlgorithmLbl);
-            this.Controls.Add(this.SHA256LicenceRadioBtn);
-            this.Controls.Add(this.SHA1LicenceRadioBtn);
-            this.Controls.Add(this.MandatoryLbl);
-            this.Controls.Add(this.UserCount);
-            this.Controls.Add(this.ExpirationDatePicker);
-            this.Controls.Add(this.BrowseBtn);
-            this.Controls.Add(this.ResultLbl);
-            this.Controls.Add(this.OutputTB);
-            this.Controls.Add(this.GenerateBtn);
-            this.Controls.Add(this.LicenseCodeLbl);
-            this.Controls.Add(this.CustomerTenantLbl);
-            this.Controls.Add(this.SerialNumberLbl);
-            this.Controls.Add(this.ExpirationDateLbl);
-            this.Controls.Add(this.UserCountLbl);
-            this.Controls.Add(this.PathLbl);
-            this.Controls.Add(this.SerialNumberTB);
-            this.Controls.Add(this.CustomerTB);
-            this.Controls.Add(this.LicenseCodeTB);
-            this.Controls.Add(this.PathTB);
-            this.Controls.Add(this.MainMenuStrip);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "ISVLicenseGeneratorForm";
-            this.Text = "ISV License Generator";
-            this.Icon = Resources.Icon;
-            ((System.ComponentModel.ISupportInitialize)(this.UserCount)).EndInit();
-            this.MainMenuStrip.ResumeLayout(false);
-            this.MainMenuStrip.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(580, 337);
+            Controls.Add(SigningAlgorithmLbl);
+            Controls.Add(SHA256LicenceRadioBtn);
+            Controls.Add(SHA1LicenceRadioBtn);
+            Controls.Add(MandatoryLbl);
+            Controls.Add(UserCount);
+            Controls.Add(ExpirationDatePicker);
+            Controls.Add(BrowseBtn);
+            Controls.Add(ResultLbl);
+            Controls.Add(OutputTB);
+            Controls.Add(GenerateBtn);
+            Controls.Add(LicenseCodeLbl);
+            Controls.Add(CustomerTenantLbl);
+            Controls.Add(SerialNumberLbl);
+            Controls.Add(ExpirationDateLbl);
+            Controls.Add(UserCountLbl);
+            Controls.Add(PathLbl);
+            Controls.Add(SerialNumberTB);
+            Controls.Add(CustomerTB);
+            Controls.Add(LicenseCodeTB);
+            Controls.Add(PathTB);
+            Controls.Add(MainMenuStrip);
+            Icon = Resources.Icon;
+            Name = "ISVLicenseGeneratorForm";
+            Text = "ISV License Generator";
+            ((System.ComponentModel.ISupportInitialize)UserCount).EndInit();
+            MainMenuStrip.ResumeLayout(false);
+            MainMenuStrip.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
