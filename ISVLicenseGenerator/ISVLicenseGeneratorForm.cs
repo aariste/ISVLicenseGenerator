@@ -16,6 +16,8 @@ namespace ISVLicenseGeneratorCore
             InitializeComponent();
 
             config = new AxUtilConfiguration();
+
+            config.SignatureVersion = 1;
         }
 
         private void GenerateBtn_Click(object sender, EventArgs e)
@@ -132,7 +134,7 @@ namespace ISVLicenseGeneratorCore
                 {
                     throw;
                 }
-            }            
+            }
         }
 
         private void SHA1LicenceRadioBtn_CheckedChanged(object sender, EventArgs e)
