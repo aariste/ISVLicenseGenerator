@@ -13,6 +13,8 @@ The latest version has been migrated to .NET 7.0.
 # Transition to SHA265
 The [SHA1 hashing algorithm will be deprecated in early 2021](https://docs.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/get-started/removed-deprecated-features-platform-updates#isv-licenses-created-by-using-the-sha1-hashing-algorithm). The tool supports both algorithms right now but please keep in mind that you should check with your certificate provider if yours supports SHA256 before SHA1 is finally retired.
 
+WARNING: The SHA256 functionality has been removed temporally because it's not generating valid license files.
+
 # Usage
 You need to install the drivers and management software of your USB token first. Execute the program and fill in the mandatory fields:
 
