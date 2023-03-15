@@ -17,7 +17,7 @@ namespace ISVLicenseGeneratorCore
 
             config = new AxUtilConfiguration();
 
-            config.SignatureVersion = 1;
+            config.SignatureVersion = 2;
         }
 
         private void GenerateBtn_Click(object sender, EventArgs e)
@@ -136,20 +136,5 @@ namespace ISVLicenseGeneratorCore
                 }
             }
         }
-
-        private void SHA1LicenceRadioBtn_CheckedChanged(object sender, EventArgs e)
-        {
-            SHA1LicenceRadioBtn.Checked = !SHA256LicenceRadioBtn.Checked;
-
-            config.SignatureVersion = SHA1LicenceRadioBtn.Checked ? 1 : 0;
-        }
-
-        private void SHA256LicenceRadioBtn_CheckedChanged(object sender, EventArgs e)
-        {
-            SHA256LicenceRadioBtn.Checked = !SHA1LicenceRadioBtn.Checked;
-
-            config.SignatureVersion = SHA256LicenceRadioBtn.Checked ? 0 : 1;
-        }
-
     }
 }
