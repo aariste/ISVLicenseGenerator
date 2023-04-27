@@ -62,92 +62,97 @@ namespace ISVLicenseGeneratorCore
             // PathTB
             // 
             PathTB.BackColor = System.Drawing.SystemColors.Control;
-            PathTB.Location = new System.Drawing.Point(190, 34);
+            PathTB.Location = new System.Drawing.Point(217, 45);
+            PathTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             PathTB.Name = "PathTB";
             PathTB.ReadOnly = true;
-            PathTB.Size = new System.Drawing.Size(289, 23);
+            PathTB.Size = new System.Drawing.Size(330, 27);
             PathTB.TabIndex = 0;
             // 
             // LicenseCodeTB
             // 
-            LicenseCodeTB.Location = new System.Drawing.Point(190, 60);
+            LicenseCodeTB.Location = new System.Drawing.Point(217, 80);
+            LicenseCodeTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             LicenseCodeTB.Name = "LicenseCodeTB";
-            LicenseCodeTB.Size = new System.Drawing.Size(377, 23);
+            LicenseCodeTB.Size = new System.Drawing.Size(430, 27);
             LicenseCodeTB.TabIndex = 1;
             // 
             // CustomerTB
             // 
-            CustomerTB.Location = new System.Drawing.Point(190, 86);
+            CustomerTB.Location = new System.Drawing.Point(217, 115);
+            CustomerTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             CustomerTB.Name = "CustomerTB";
-            CustomerTB.Size = new System.Drawing.Size(377, 23);
+            CustomerTB.Size = new System.Drawing.Size(430, 27);
             CustomerTB.TabIndex = 2;
             // 
             // SerialNumberTB
             // 
-            SerialNumberTB.Location = new System.Drawing.Point(190, 112);
+            SerialNumberTB.Location = new System.Drawing.Point(217, 149);
+            SerialNumberTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             SerialNumberTB.Name = "SerialNumberTB";
-            SerialNumberTB.Size = new System.Drawing.Size(377, 23);
+            SerialNumberTB.Size = new System.Drawing.Size(430, 27);
             SerialNumberTB.TabIndex = 3;
             // 
             // PathLbl
             // 
             PathLbl.AutoSize = true;
-            PathLbl.Location = new System.Drawing.Point(10, 36);
+            PathLbl.Location = new System.Drawing.Point(11, 48);
             PathLbl.Name = "PathLbl";
-            PathLbl.Size = new System.Drawing.Size(47, 15);
+            PathLbl.Size = new System.Drawing.Size(57, 20);
             PathLbl.TabIndex = 6;
             PathLbl.Text = "Path (*)";
             // 
             // UserCountLbl
             // 
             UserCountLbl.AutoSize = true;
-            UserCountLbl.Location = new System.Drawing.Point(10, 167);
+            UserCountLbl.Location = new System.Drawing.Point(11, 223);
             UserCountLbl.Name = "UserCountLbl";
-            UserCountLbl.Size = new System.Drawing.Size(64, 15);
+            UserCountLbl.Size = new System.Drawing.Size(79, 20);
             UserCountLbl.TabIndex = 8;
             UserCountLbl.Text = "User count";
             // 
             // ExpirationDateLbl
             // 
             ExpirationDateLbl.AutoSize = true;
-            ExpirationDateLbl.Location = new System.Drawing.Point(10, 144);
+            ExpirationDateLbl.Location = new System.Drawing.Point(11, 192);
             ExpirationDateLbl.Name = "ExpirationDateLbl";
-            ExpirationDateLbl.Size = new System.Drawing.Size(86, 15);
+            ExpirationDateLbl.Size = new System.Drawing.Size(110, 20);
             ExpirationDateLbl.TabIndex = 9;
             ExpirationDateLbl.Text = "Expiration date";
             // 
             // SerialNumberLbl
             // 
             SerialNumberLbl.AutoSize = true;
-            SerialNumberLbl.Location = new System.Drawing.Point(10, 115);
+            SerialNumberLbl.Location = new System.Drawing.Point(11, 153);
             SerialNumberLbl.Name = "SerialNumberLbl";
-            SerialNumberLbl.Size = new System.Drawing.Size(96, 15);
+            SerialNumberLbl.Size = new System.Drawing.Size(121, 20);
             SerialNumberLbl.TabIndex = 10;
             SerialNumberLbl.Text = "Serial number (*)";
             // 
             // CustomerTenantLbl
             // 
             CustomerTenantLbl.AutoSize = true;
-            CustomerTenantLbl.Location = new System.Drawing.Point(10, 89);
+            CustomerTenantLbl.Location = new System.Drawing.Point(11, 119);
             CustomerTenantLbl.Name = "CustomerTenantLbl";
-            CustomerTenantLbl.Size = new System.Drawing.Size(112, 15);
+            CustomerTenantLbl.Size = new System.Drawing.Size(138, 20);
             CustomerTenantLbl.TabIndex = 11;
             CustomerTenantLbl.Text = "Customer tenant (*)";
             // 
             // LicenseCodeLbl
             // 
             LicenseCodeLbl.AutoSize = true;
-            LicenseCodeLbl.Location = new System.Drawing.Point(10, 62);
+            LicenseCodeLbl.Location = new System.Drawing.Point(11, 83);
             LicenseCodeLbl.Name = "LicenseCodeLbl";
-            LicenseCodeLbl.Size = new System.Drawing.Size(91, 15);
+            LicenseCodeLbl.Size = new System.Drawing.Size(114, 20);
             LicenseCodeLbl.TabIndex = 12;
             LicenseCodeLbl.Text = "License code (*)";
             // 
             // GenerateBtn
             // 
-            GenerateBtn.Location = new System.Drawing.Point(476, 192);
+            GenerateBtn.Location = new System.Drawing.Point(544, 256);
+            GenerateBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             GenerateBtn.Name = "GenerateBtn";
-            GenerateBtn.Size = new System.Drawing.Size(90, 30);
+            GenerateBtn.Size = new System.Drawing.Size(103, 40);
             GenerateBtn.TabIndex = 13;
             GenerateBtn.Text = "Generate";
             GenerateBtn.UseVisualStyleBackColor = true;
@@ -156,27 +161,29 @@ namespace ISVLicenseGeneratorCore
             // OutputTB
             // 
             OutputTB.Enabled = false;
-            OutputTB.Location = new System.Drawing.Point(10, 235);
+            OutputTB.Location = new System.Drawing.Point(11, 313);
+            OutputTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             OutputTB.Multiline = true;
             OutputTB.Name = "OutputTB";
             OutputTB.ReadOnly = true;
-            OutputTB.Size = new System.Drawing.Size(556, 60);
+            OutputTB.Size = new System.Drawing.Size(635, 79);
             OutputTB.TabIndex = 14;
             // 
             // ResultLbl
             // 
             ResultLbl.AutoSize = true;
-            ResultLbl.Location = new System.Drawing.Point(10, 216);
+            ResultLbl.Location = new System.Drawing.Point(11, 288);
             ResultLbl.Name = "ResultLbl";
-            ResultLbl.Size = new System.Drawing.Size(39, 15);
+            ResultLbl.Size = new System.Drawing.Size(49, 20);
             ResultLbl.TabIndex = 15;
             ResultLbl.Text = "Result";
             // 
             // BrowseBtn
             // 
-            BrowseBtn.Location = new System.Drawing.Point(484, 32);
+            BrowseBtn.Location = new System.Drawing.Point(553, 43);
+            BrowseBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             BrowseBtn.Name = "BrowseBtn";
-            BrowseBtn.Size = new System.Drawing.Size(82, 22);
+            BrowseBtn.Size = new System.Drawing.Size(94, 29);
             BrowseBtn.TabIndex = 16;
             BrowseBtn.Text = "Browse...";
             BrowseBtn.UseVisualStyleBackColor = true;
@@ -185,26 +192,29 @@ namespace ISVLicenseGeneratorCore
             // ExpirationDatePicker
             // 
             ExpirationDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            ExpirationDatePicker.Location = new System.Drawing.Point(190, 139);
+            ExpirationDatePicker.Location = new System.Drawing.Point(217, 185);
+            ExpirationDatePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             ExpirationDatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             ExpirationDatePicker.Name = "ExpirationDatePicker";
-            ExpirationDatePicker.Size = new System.Drawing.Size(377, 23);
+            ExpirationDatePicker.Size = new System.Drawing.Size(430, 27);
             ExpirationDatePicker.TabIndex = 17;
             ExpirationDatePicker.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // UserCount
             // 
-            UserCount.Location = new System.Drawing.Point(190, 164);
+            UserCount.Location = new System.Drawing.Point(217, 219);
+            UserCount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            UserCount.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
             UserCount.Name = "UserCount";
-            UserCount.Size = new System.Drawing.Size(376, 23);
+            UserCount.Size = new System.Drawing.Size(430, 27);
             UserCount.TabIndex = 18;
             // 
             // MandatoryLbl
             // 
             MandatoryLbl.AutoSize = true;
-            MandatoryLbl.Location = new System.Drawing.Point(5, 192);
+            MandatoryLbl.Location = new System.Drawing.Point(6, 256);
             MandatoryLbl.Name = "MandatoryLbl";
-            MandatoryLbl.Size = new System.Drawing.Size(115, 15);
+            MandatoryLbl.Size = new System.Drawing.Size(145, 20);
             MandatoryLbl.TabIndex = 19;
             MandatoryLbl.Text = " (*) Mandatory fields";
             // 
@@ -214,8 +224,8 @@ namespace ISVLicenseGeneratorCore
             MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
             MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             MainMenuStrip.Name = "MainMenuStrip";
-            MainMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            MainMenuStrip.Size = new System.Drawing.Size(580, 24);
+            MainMenuStrip.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
+            MainMenuStrip.Size = new System.Drawing.Size(663, 30);
             MainMenuStrip.TabIndex = 20;
             MainMenuStrip.Text = "menuStrip1";
             // 
@@ -223,13 +233,13 @@ namespace ISVLicenseGeneratorCore
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
             fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            exitToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -237,21 +247,21 @@ namespace ISVLicenseGeneratorCore
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { usageToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
             helpToolStripMenuItem.Text = "Help";
             // 
             // usageToolStripMenuItem
             // 
             usageToolStripMenuItem.Name = "usageToolStripMenuItem";
-            usageToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
+            usageToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
             usageToolStripMenuItem.Text = "Usage";
             usageToolStripMenuItem.Click += usageToolStripMenuItem_Click;
             // 
             // ISVLicenseGeneratorForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(580, 309);
+            ClientSize = new System.Drawing.Size(663, 412);
             Controls.Add(MandatoryLbl);
             Controls.Add(UserCount);
             Controls.Add(ExpirationDatePicker);
@@ -271,6 +281,7 @@ namespace ISVLicenseGeneratorCore
             Controls.Add(PathTB);
             Controls.Add(MainMenuStrip);
             Icon = Resources.Icon;
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "ISVLicenseGeneratorForm";
             Text = "ISV License Generator";
             ((System.ComponentModel.ISupportInitialize)UserCount).EndInit();
