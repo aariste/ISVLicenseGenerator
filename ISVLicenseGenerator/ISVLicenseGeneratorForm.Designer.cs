@@ -204,7 +204,7 @@ namespace ISVLicenseGeneratorCore
             // 
             UserCount.Location = new System.Drawing.Point(217, 219);
             UserCount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            UserCount.Maximum = new decimal(new int[] { 1000000, 0, 0, 0 });
+            UserCount.Maximum = new decimal(new int[] { int.MaxValue, 0, 0, 0 });
             UserCount.Name = "UserCount";
             UserCount.Size = new System.Drawing.Size(430, 27);
             UserCount.TabIndex = 18;
