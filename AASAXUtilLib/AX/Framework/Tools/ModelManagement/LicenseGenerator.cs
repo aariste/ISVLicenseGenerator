@@ -81,9 +81,9 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             return certificate != null && this.GenerateLicenseFile(this.GenerateSignature(certificate), certificate);
         }
 
-        internal bool GenerateLicenseKeyVault(string keyVaultDNS, string keyName)
+        internal bool GenerateLicenseKeyVault(string keyVaultDNS, string keyName, string tenantId, string clientId, string clientSecret)
         {
-            return this.GenerateLicenseFileKeyVault(keyVaultDNS, keyName);
+            return this.GenerateLicenseFileKeyVault(keyVaultDNS, keyName, tenantId, clientId, clientSecret);
         }
 
         private bool ValidateCertificate(X509Certificate2 certificate)
@@ -128,14 +128,10 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             return true;
         }
 
-        private bool GenerateLicenseFileKeyVault(string keyVaultDNS, string keyName)
+        private bool GenerateLicenseFileKeyVault(string keyVaultDNS, string keyName, string tenantId, string clientId, string clientSecret)
         {
             try
             {
-                var tenantId = "1101a24f-eae4-4ce5-b5b9-e0eefc254710";
-                var clientId = "39662948-a205-4d72-b710-61ccb623715d";
-                var clientSecret = "XsC8Q~hAEclgyryCLdecE2YSyWRo8.PfI5Prraf-";
-
                 var credential = new ClientSecretCredential(tenantId, clientId, clientSecret);
 
                 //var credential = new DefaultAzureCredential();                
