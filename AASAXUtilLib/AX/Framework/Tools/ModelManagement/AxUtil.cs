@@ -63,6 +63,11 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
             return false;
         }
 
+        public bool GenerateLicenseKeyVault(string keyVaultDNS, string keyName)
+        { 
+            return new LicenseGenerator(this.config, this.context).GenerateLicenseKeyVault(keyVaultDNS, keyName);
+        }
+
         private static void ValidateContextNotNull(AxUtilContext context)
         {
             if (context == null)

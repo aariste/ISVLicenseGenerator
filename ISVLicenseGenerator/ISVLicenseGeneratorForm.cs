@@ -15,6 +15,12 @@ namespace ISVLicenseGeneratorCore
         {
             InitializeComponent();
 
+            EntraIDTenantTB.Enabled = false;
+            AppIdTB.Enabled = false;
+            SecretTB.Enabled = false;
+            keyVaultNameTB.Enabled = false;
+            keyNameTB.Enabled = false;
+
             config = new AxUtilConfiguration();
 
             config.SignatureVersion = 2;
@@ -24,7 +30,14 @@ namespace ISVLicenseGeneratorCore
         {
             try
             {
-                this.GenerateLicense();
+                if (usbBtn.Checked)
+                {
+                    this.GenerateLicense();
+                }
+                else
+                {
+                    this.GenerateLicenseKeyVault();
+                }
             }
             catch (Exception ex)
             {
@@ -35,6 +48,11 @@ namespace ISVLicenseGeneratorCore
         private Boolean ValidateFields()
         {
             return !String.IsNullOrEmpty(PathTB.Text) && !String.IsNullOrEmpty(LicenseCodeTB.Text) && !String.IsNullOrEmpty(CustomerTB.Text) && !String.IsNullOrEmpty(SerialNumberTB.Text);
+        }
+
+        private Boolean ValidateFieldsKeyVault()
+        {
+            return !String.IsNullOrEmpty(EntraIDTenantTB.Text) && !String.IsNullOrEmpty(AppIdTB.Text) && !String.IsNullOrEmpty(SecretTB.Text) && !String.IsNullOrEmpty(PathTB.Text) && !String.IsNullOrEmpty(keyVaultNameTB.Text) && !String.IsNullOrEmpty(keyNameTB.Text) && !String.IsNullOrEmpty(LicenseCodeTB.Text) && !String.IsNullOrEmpty(CustomerTB.Text) && !String.IsNullOrEmpty(SerialNumberTB.Text);
         }
 
         private void BrowseBtn_Click(object sender, EventArgs e)
@@ -102,6 +120,55 @@ namespace ISVLicenseGeneratorCore
             }
         }
 
+        private void GenerateLicenseKeyVault()
+        {
+            LicenseInfo licenseInfo = new LicenseInfo
+            {
+                FilePath = PathTB.Text,
+                LicenseCode = LicenseCodeTB.Text,
+                Customer = CustomerTB.Text,
+                SerialNumber = SerialNumberTB.Text,
+                Timestamp = DateTime.Now
+            };
+
+            if (ExpirationDatePicker.Value != ExpirationDatePicker.MinDate)
+            {
+                licenseInfo.ExpirationDate = ExpirationDatePicker.Value;
+            }
+
+            if (UserCount.Value > 0)
+            {
+                licenseInfo.UserCount = (int)UserCount.Value;
+            }
+
+            if (!this.ValidateFieldsKeyVault())
+            {
+                MessageBox.Show("Please fill all mandatory fields.");
+                throw new System.MissingFieldException("Please fill all mandatory fields.");
+            }
+
+            AxUtilContext context = new AxUtilContext();
+
+            config.LicenseInfo = licenseInfo;
+
+            AxUtil util = new AxUtil(context, config);
+
+            //X509Store store = new X509Store("My", StoreLocation.CurrentUser);
+            //store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
+
+            //X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
+            //X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
+            //X509Certificate2Collection scollection = X509Certificate2UI.SelectFromCollection(fcollection, "Certificate Select", "Select a certificate from the following list to sign the license", X509SelectionFlag.SingleSelection);
+
+            Boolean result = util.GenerateLicenseKeyVault(keyVaultNameTB.Text, keyNameTB.Text);
+
+            if (result == true)
+            {
+                MessageBox.Show(String.Format("License generated successfully. Saved at {0}", PathTB.Text));
+                OutputTB.Text = String.Format("License generated successfully. Saved at {0}", PathTB.Text);
+            }
+        }
+
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -135,6 +202,24 @@ namespace ISVLicenseGeneratorCore
                     throw;
                 }
             }
+        }
+
+        private void usbBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            EntraIDTenantTB.Enabled = false;
+            AppIdTB.Enabled = false;
+            SecretTB.Enabled = false;
+            keyVaultNameTB.Enabled = false;
+            keyNameTB.Enabled = false;
+        }
+
+        private void keyVauiltBtn_CheckedChanged(object sender, EventArgs e)
+        {
+            EntraIDTenantTB.Enabled = true;
+            AppIdTB.Enabled = true;
+            SecretTB.Enabled = true;
+            keyVaultNameTB.Enabled = true;
+            keyNameTB.Enabled = true;
         }
     }
 }

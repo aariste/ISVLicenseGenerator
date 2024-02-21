@@ -55,6 +55,19 @@ namespace ISVLicenseGeneratorCore
             exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             usageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            keyVauiltBtn = new System.Windows.Forms.RadioButton();
+            usbBtn = new System.Windows.Forms.RadioButton();
+            CertLocationLbl = new System.Windows.Forms.Label();
+            keyVaultDNSlbl = new System.Windows.Forms.Label();
+            keyNameLbl = new System.Windows.Forms.Label();
+            keyVaultNameTB = new System.Windows.Forms.TextBox();
+            keyNameTB = new System.Windows.Forms.TextBox();
+            EntraIDTenantLbl = new System.Windows.Forms.Label();
+            EntraIDTenantTB = new System.Windows.Forms.TextBox();
+            AppIdTB = new System.Windows.Forms.TextBox();
+            SecretTB = new System.Windows.Forms.TextBox();
+            AppIDLbl = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)UserCount).BeginInit();
             MainMenuStrip.SuspendLayout();
             SuspendLayout();
@@ -62,97 +75,92 @@ namespace ISVLicenseGeneratorCore
             // PathTB
             // 
             PathTB.BackColor = System.Drawing.SystemColors.Control;
-            PathTB.Location = new System.Drawing.Point(217, 45);
-            PathTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            PathTB.Location = new System.Drawing.Point(189, 198);
             PathTB.Name = "PathTB";
             PathTB.ReadOnly = true;
-            PathTB.Size = new System.Drawing.Size(330, 27);
+            PathTB.Size = new System.Drawing.Size(289, 23);
             PathTB.TabIndex = 0;
             // 
             // LicenseCodeTB
             // 
-            LicenseCodeTB.Location = new System.Drawing.Point(217, 80);
-            LicenseCodeTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            LicenseCodeTB.Location = new System.Drawing.Point(189, 227);
             LicenseCodeTB.Name = "LicenseCodeTB";
-            LicenseCodeTB.Size = new System.Drawing.Size(430, 27);
+            LicenseCodeTB.Size = new System.Drawing.Size(377, 23);
             LicenseCodeTB.TabIndex = 1;
             // 
             // CustomerTB
             // 
-            CustomerTB.Location = new System.Drawing.Point(217, 115);
-            CustomerTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            CustomerTB.Location = new System.Drawing.Point(188, 256);
             CustomerTB.Name = "CustomerTB";
-            CustomerTB.Size = new System.Drawing.Size(430, 27);
+            CustomerTB.Size = new System.Drawing.Size(377, 23);
             CustomerTB.TabIndex = 2;
             // 
             // SerialNumberTB
             // 
-            SerialNumberTB.Location = new System.Drawing.Point(217, 149);
-            SerialNumberTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            SerialNumberTB.Location = new System.Drawing.Point(189, 285);
             SerialNumberTB.Name = "SerialNumberTB";
-            SerialNumberTB.Size = new System.Drawing.Size(430, 27);
+            SerialNumberTB.Size = new System.Drawing.Size(377, 23);
             SerialNumberTB.TabIndex = 3;
             // 
             // PathLbl
             // 
             PathLbl.AutoSize = true;
-            PathLbl.Location = new System.Drawing.Point(11, 48);
+            PathLbl.Location = new System.Drawing.Point(12, 206);
             PathLbl.Name = "PathLbl";
-            PathLbl.Size = new System.Drawing.Size(57, 20);
+            PathLbl.Size = new System.Drawing.Size(47, 15);
             PathLbl.TabIndex = 6;
             PathLbl.Text = "Path (*)";
             // 
             // UserCountLbl
             // 
             UserCountLbl.AutoSize = true;
-            UserCountLbl.Location = new System.Drawing.Point(11, 223);
+            UserCountLbl.Location = new System.Drawing.Point(12, 351);
             UserCountLbl.Name = "UserCountLbl";
-            UserCountLbl.Size = new System.Drawing.Size(79, 20);
+            UserCountLbl.Size = new System.Drawing.Size(64, 15);
             UserCountLbl.TabIndex = 8;
             UserCountLbl.Text = "User count";
             // 
             // ExpirationDateLbl
             // 
             ExpirationDateLbl.AutoSize = true;
-            ExpirationDateLbl.Location = new System.Drawing.Point(11, 192);
+            ExpirationDateLbl.Location = new System.Drawing.Point(12, 322);
             ExpirationDateLbl.Name = "ExpirationDateLbl";
-            ExpirationDateLbl.Size = new System.Drawing.Size(110, 20);
+            ExpirationDateLbl.Size = new System.Drawing.Size(86, 15);
             ExpirationDateLbl.TabIndex = 9;
             ExpirationDateLbl.Text = "Expiration date";
             // 
             // SerialNumberLbl
             // 
             SerialNumberLbl.AutoSize = true;
-            SerialNumberLbl.Location = new System.Drawing.Point(11, 153);
+            SerialNumberLbl.Location = new System.Drawing.Point(12, 293);
             SerialNumberLbl.Name = "SerialNumberLbl";
-            SerialNumberLbl.Size = new System.Drawing.Size(121, 20);
+            SerialNumberLbl.Size = new System.Drawing.Size(96, 15);
             SerialNumberLbl.TabIndex = 10;
             SerialNumberLbl.Text = "Serial number (*)";
             // 
             // CustomerTenantLbl
             // 
             CustomerTenantLbl.AutoSize = true;
-            CustomerTenantLbl.Location = new System.Drawing.Point(11, 119);
+            CustomerTenantLbl.Location = new System.Drawing.Point(12, 264);
             CustomerTenantLbl.Name = "CustomerTenantLbl";
-            CustomerTenantLbl.Size = new System.Drawing.Size(138, 20);
+            CustomerTenantLbl.Size = new System.Drawing.Size(112, 15);
             CustomerTenantLbl.TabIndex = 11;
             CustomerTenantLbl.Text = "Customer tenant (*)";
             // 
             // LicenseCodeLbl
             // 
             LicenseCodeLbl.AutoSize = true;
-            LicenseCodeLbl.Location = new System.Drawing.Point(11, 83);
+            LicenseCodeLbl.Location = new System.Drawing.Point(12, 235);
             LicenseCodeLbl.Name = "LicenseCodeLbl";
-            LicenseCodeLbl.Size = new System.Drawing.Size(114, 20);
+            LicenseCodeLbl.Size = new System.Drawing.Size(91, 15);
             LicenseCodeLbl.TabIndex = 12;
             LicenseCodeLbl.Text = "License code (*)";
             // 
             // GenerateBtn
             // 
-            GenerateBtn.Location = new System.Drawing.Point(544, 256);
-            GenerateBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            GenerateBtn.Location = new System.Drawing.Point(474, 384);
             GenerateBtn.Name = "GenerateBtn";
-            GenerateBtn.Size = new System.Drawing.Size(103, 40);
+            GenerateBtn.Size = new System.Drawing.Size(90, 30);
             GenerateBtn.TabIndex = 13;
             GenerateBtn.Text = "Generate";
             GenerateBtn.UseVisualStyleBackColor = true;
@@ -161,29 +169,27 @@ namespace ISVLicenseGeneratorCore
             // OutputTB
             // 
             OutputTB.Enabled = false;
-            OutputTB.Location = new System.Drawing.Point(11, 313);
-            OutputTB.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            OutputTB.Location = new System.Drawing.Point(12, 420);
             OutputTB.Multiline = true;
             OutputTB.Name = "OutputTB";
             OutputTB.ReadOnly = true;
-            OutputTB.Size = new System.Drawing.Size(635, 79);
+            OutputTB.Size = new System.Drawing.Size(556, 145);
             OutputTB.TabIndex = 14;
             // 
             // ResultLbl
             // 
             ResultLbl.AutoSize = true;
-            ResultLbl.Location = new System.Drawing.Point(11, 288);
+            ResultLbl.Location = new System.Drawing.Point(12, 402);
             ResultLbl.Name = "ResultLbl";
-            ResultLbl.Size = new System.Drawing.Size(49, 20);
+            ResultLbl.Size = new System.Drawing.Size(39, 15);
             ResultLbl.TabIndex = 15;
             ResultLbl.Text = "Result";
             // 
             // BrowseBtn
             // 
-            BrowseBtn.Location = new System.Drawing.Point(553, 43);
-            BrowseBtn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            BrowseBtn.Location = new System.Drawing.Point(484, 199);
             BrowseBtn.Name = "BrowseBtn";
-            BrowseBtn.Size = new System.Drawing.Size(94, 29);
+            BrowseBtn.Size = new System.Drawing.Size(82, 22);
             BrowseBtn.TabIndex = 16;
             BrowseBtn.Text = "Browse...";
             BrowseBtn.UseVisualStyleBackColor = true;
@@ -192,29 +198,27 @@ namespace ISVLicenseGeneratorCore
             // ExpirationDatePicker
             // 
             ExpirationDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            ExpirationDatePicker.Location = new System.Drawing.Point(217, 185);
-            ExpirationDatePicker.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            ExpirationDatePicker.Location = new System.Drawing.Point(189, 314);
             ExpirationDatePicker.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             ExpirationDatePicker.Name = "ExpirationDatePicker";
-            ExpirationDatePicker.Size = new System.Drawing.Size(430, 27);
+            ExpirationDatePicker.Size = new System.Drawing.Size(377, 23);
             ExpirationDatePicker.TabIndex = 17;
             ExpirationDatePicker.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             // 
             // UserCount
             // 
-            UserCount.Location = new System.Drawing.Point(217, 219);
-            UserCount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            UserCount.Location = new System.Drawing.Point(188, 343);
             UserCount.Maximum = new decimal(new int[] { int.MaxValue, 0, 0, 0 });
             UserCount.Name = "UserCount";
-            UserCount.Size = new System.Drawing.Size(430, 27);
+            UserCount.Size = new System.Drawing.Size(376, 23);
             UserCount.TabIndex = 18;
             // 
             // MandatoryLbl
             // 
             MandatoryLbl.AutoSize = true;
-            MandatoryLbl.Location = new System.Drawing.Point(6, 256);
+            MandatoryLbl.Location = new System.Drawing.Point(12, 377);
             MandatoryLbl.Name = "MandatoryLbl";
-            MandatoryLbl.Size = new System.Drawing.Size(145, 20);
+            MandatoryLbl.Size = new System.Drawing.Size(115, 15);
             MandatoryLbl.TabIndex = 19;
             MandatoryLbl.Text = " (*) Mandatory fields";
             // 
@@ -224,8 +228,8 @@ namespace ISVLicenseGeneratorCore
             MainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { fileToolStripMenuItem, helpToolStripMenuItem });
             MainMenuStrip.Location = new System.Drawing.Point(0, 0);
             MainMenuStrip.Name = "MainMenuStrip";
-            MainMenuStrip.Padding = new System.Windows.Forms.Padding(6, 3, 0, 3);
-            MainMenuStrip.Size = new System.Drawing.Size(663, 30);
+            MainMenuStrip.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
+            MainMenuStrip.Size = new System.Drawing.Size(577, 24);
             MainMenuStrip.TabIndex = 20;
             MainMenuStrip.Text = "menuStrip1";
             // 
@@ -233,13 +237,13 @@ namespace ISVLicenseGeneratorCore
             // 
             fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { exitToolStripMenuItem });
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new System.Drawing.Size(116, 26);
+            exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -247,21 +251,147 @@ namespace ISVLicenseGeneratorCore
             // 
             helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { usageToolStripMenuItem });
             helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             helpToolStripMenuItem.Text = "Help";
             // 
             // usageToolStripMenuItem
             // 
             usageToolStripMenuItem.Name = "usageToolStripMenuItem";
-            usageToolStripMenuItem.Size = new System.Drawing.Size(133, 26);
+            usageToolStripMenuItem.Size = new System.Drawing.Size(106, 22);
             usageToolStripMenuItem.Text = "Usage";
             usageToolStripMenuItem.Click += usageToolStripMenuItem_Click;
             // 
+            // keyVauiltBtn
+            // 
+            keyVauiltBtn.AutoSize = true;
+            keyVauiltBtn.Location = new System.Drawing.Point(273, 28);
+            keyVauiltBtn.Name = "keyVauiltBtn";
+            keyVauiltBtn.Size = new System.Drawing.Size(106, 19);
+            keyVauiltBtn.TabIndex = 23;
+            keyVauiltBtn.Text = "Azure Key Vault";
+            keyVauiltBtn.UseVisualStyleBackColor = true;
+            keyVauiltBtn.CheckedChanged += keyVauiltBtn_CheckedChanged;
+            // 
+            // usbBtn
+            // 
+            usbBtn.AutoSize = true;
+            usbBtn.Checked = true;
+            usbBtn.Location = new System.Drawing.Point(188, 28);
+            usbBtn.Name = "usbBtn";
+            usbBtn.Size = new System.Drawing.Size(79, 19);
+            usbBtn.TabIndex = 22;
+            usbBtn.TabStop = true;
+            usbBtn.Text = "USB/Local";
+            usbBtn.UseVisualStyleBackColor = true;
+            usbBtn.CheckedChanged += usbBtn_CheckedChanged;
+            // 
+            // CertLocationLbl
+            // 
+            CertLocationLbl.AutoSize = true;
+            CertLocationLbl.Location = new System.Drawing.Point(12, 30);
+            CertLocationLbl.Name = "CertLocationLbl";
+            CertLocationLbl.Size = new System.Drawing.Size(107, 15);
+            CertLocationLbl.TabIndex = 21;
+            CertLocationLbl.Text = "Certificate location";
+            // 
+            // keyVaultDNSlbl
+            // 
+            keyVaultDNSlbl.AutoSize = true;
+            keyVaultDNSlbl.Location = new System.Drawing.Point(12, 61);
+            keyVaultDNSlbl.Name = "keyVaultDNSlbl";
+            keyVaultDNSlbl.Size = new System.Drawing.Size(97, 15);
+            keyVaultDNSlbl.TabIndex = 24;
+            keyVaultDNSlbl.Text = "Key Vault DNS (*)";
+            // 
+            // keyNameLbl
+            // 
+            keyNameLbl.AutoSize = true;
+            keyNameLbl.Location = new System.Drawing.Point(12, 90);
+            keyNameLbl.Name = "keyNameLbl";
+            keyNameLbl.Size = new System.Drawing.Size(75, 15);
+            keyNameLbl.TabIndex = 25;
+            keyNameLbl.Text = "Key name (*)";
+            // 
+            // keyVaultNameTB
+            // 
+            keyVaultNameTB.Location = new System.Drawing.Point(189, 53);
+            keyVaultNameTB.Name = "keyVaultNameTB";
+            keyVaultNameTB.Size = new System.Drawing.Size(377, 23);
+            keyVaultNameTB.TabIndex = 26;
+            // 
+            // keyNameTB
+            // 
+            keyNameTB.Location = new System.Drawing.Point(189, 82);
+            keyNameTB.Name = "keyNameTB";
+            keyNameTB.Size = new System.Drawing.Size(377, 23);
+            keyNameTB.TabIndex = 27;
+            // 
+            // EntraIDTenantLbl
+            // 
+            EntraIDTenantLbl.AutoSize = true;
+            EntraIDTenantLbl.Location = new System.Drawing.Point(12, 119);
+            EntraIDTenantLbl.Name = "EntraIDTenantLbl";
+            EntraIDTenantLbl.Size = new System.Drawing.Size(115, 15);
+            EntraIDTenantLbl.TabIndex = 28;
+            EntraIDTenantLbl.Text = "Entra ID Tenant Id (*)";
+            // 
+            // EntraIDTenantTB
+            // 
+            EntraIDTenantTB.Location = new System.Drawing.Point(188, 111);
+            EntraIDTenantTB.Name = "EntraIDTenantTB";
+            EntraIDTenantTB.Size = new System.Drawing.Size(377, 23);
+            EntraIDTenantTB.TabIndex = 29;
+            // 
+            // AppIdTB
+            // 
+            AppIdTB.Location = new System.Drawing.Point(190, 140);
+            AppIdTB.Name = "AppIdTB";
+            AppIdTB.Size = new System.Drawing.Size(377, 23);
+            AppIdTB.TabIndex = 30;
+            // 
+            // SecretTB
+            // 
+            SecretTB.Location = new System.Drawing.Point(190, 169);
+            SecretTB.Name = "SecretTB";
+            SecretTB.Size = new System.Drawing.Size(377, 23);
+            SecretTB.TabIndex = 31;
+            // 
+            // AppIDLbl
+            // 
+            AppIDLbl.AutoSize = true;
+            AppIDLbl.Location = new System.Drawing.Point(12, 148);
+            AppIDLbl.Name = "AppIDLbl";
+            AppIDLbl.Size = new System.Drawing.Size(55, 15);
+            AppIDLbl.TabIndex = 32;
+            AppIDLbl.Text = "AppId (*)";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(12, 177);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(55, 15);
+            label1.TabIndex = 33;
+            label1.Text = "Secret (*)";
+            // 
             // ISVLicenseGeneratorForm
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(663, 412);
+            ClientSize = new System.Drawing.Size(577, 576);
+            Controls.Add(label1);
+            Controls.Add(AppIDLbl);
+            Controls.Add(SecretTB);
+            Controls.Add(AppIdTB);
+            Controls.Add(EntraIDTenantTB);
+            Controls.Add(EntraIDTenantLbl);
+            Controls.Add(keyNameTB);
+            Controls.Add(keyVaultNameTB);
+            Controls.Add(keyNameLbl);
+            Controls.Add(keyVaultDNSlbl);
+            Controls.Add(keyVauiltBtn);
+            Controls.Add(usbBtn);
+            Controls.Add(CertLocationLbl);
             Controls.Add(MandatoryLbl);
             Controls.Add(UserCount);
             Controls.Add(ExpirationDatePicker);
@@ -281,7 +411,6 @@ namespace ISVLicenseGeneratorCore
             Controls.Add(PathTB);
             Controls.Add(MainMenuStrip);
             Icon = Resources.Icon;
-            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "ISVLicenseGeneratorForm";
             Text = "ISV License Generator";
             ((System.ComponentModel.ISupportInitialize)UserCount).EndInit();
@@ -316,6 +445,19 @@ namespace ISVLicenseGeneratorCore
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usageToolStripMenuItem;
+        private System.Windows.Forms.RadioButton keyVauiltBtn;
+        private System.Windows.Forms.RadioButton usbBtn;
+        private System.Windows.Forms.Label CertLocationLbl;
+        private System.Windows.Forms.Label keyVaultDNSlbl;
+        private System.Windows.Forms.Label keyNameLbl;
+        private System.Windows.Forms.TextBox keyVaultNameTB;
+        private System.Windows.Forms.TextBox keyNameTB;
+        private System.Windows.Forms.Label EntraIDTenantLbl;
+        private System.Windows.Forms.TextBox EntraIDTenantTB;
+        private System.Windows.Forms.TextBox AppIdTB;
+        private System.Windows.Forms.TextBox SecretTB;
+        private System.Windows.Forms.Label AppIDLbl;
+        private System.Windows.Forms.Label label1;
     }
 }
 
