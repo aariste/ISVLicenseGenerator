@@ -14,7 +14,7 @@ The [SHA1 hashing algorithm will be deprecated in early 2021](https://docs.micro
 # Support for Azure Key Vault as HSM
 A [hardware security module (HSM)](https://en.wikipedia.org/wiki/Hardware_security_module) is a physical computing device that safeguards and manages secrets (most importantly digital keys), performs encryption and decryption functions for digital signatures, strong authentication and other cryptographic functions. These modules traditionally come in the form of a plug-in card or an external device that attaches directly to a computer or network server. A hardware security module contains one or more secure cryptoprocessor chips.
 
-Azure Key Vault has currently two offerings that work as an HSM: the Premium tier of Key Vault and the [Azure Key Vault managed HSM ](https://learn.microsoft.com/en-us/azure/key-vault/managed-hsm/overview).
+Azure Key Vault requires that you deploy the Premium tier to work as an HSM.
 
 # Usage
 
@@ -29,7 +29,7 @@ You need to install the drivers and management software of your USB token first.
 ## Azure Key Vault HSM
 To use the Azure Key Vault HSM functionality you will need to create:
 
-- An Azure Key Vault: Premium or managed HSM.
+- An Azure Key Vault: Premium tier.
 - App registration and secret
 - Add the App registration as a service principal with the needed rights on the Key Vault
 
