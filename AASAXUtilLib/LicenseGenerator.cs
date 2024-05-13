@@ -5,17 +5,15 @@ using Azure.Security.KeyVault.Keys.Cryptography;
 using Microsoft.Dynamics.AX.Framework.Tools.ModelManagement.Properties;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
+namespace AASAXUtilLib
 {
     internal class LicenseGenerator
     {
@@ -171,22 +169,7 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
                 return false;
             }
             return true;
-        }
-
-        private X509Certificate2 LoadCertificate()
-        {
-            X509Certificate2 certificate;
-            try
-            {
-                certificate = new X509Certificate2(this.licenseInfo.CertificatePath, this.licenseInfo.Password);
-            }
-            catch (CryptographicException ex)
-            {
-                this.context.ReportError(string.Format((IFormatProvider)CultureInfo.CurrentCulture, Resources.CertificateLoadFailure, (object)ex.Message));
-                return (X509Certificate2)null;
-            }
-            return !this.ValidateCertificate(certificate) ? (X509Certificate2)null : certificate;
-        }
+        }        
 
         private string GenerateSignature(X509Certificate2 certificate)
         {

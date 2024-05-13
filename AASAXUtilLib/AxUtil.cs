@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography.X509Certificates;
 
-namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
+namespace AASAXUtilLib
 {
     public class AxUtil
     {
@@ -15,21 +15,21 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
         public AxUtil(AxUtilContext context, AxUtilConfiguration config)
           : this()
         {
-            AxUtil.ValidateContextAndConfigNotNull(context, config);
-            this.Context = context;
-            this.Config = config;
+            ValidateContextAndConfigNotNull(context, config);
+            Context = context;
+            Config = config;
         }
 
         public AxUtilContext Context
         {
             get
             {
-                return this.context;
+                return context;
             }
             set
             {
-                AxUtil.ValidateContextNotNull(value);
-                this.context = value;
+                ValidateContextNotNull(value);
+                context = value;
             }
         }
 
@@ -37,12 +37,12 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
         {
             get
             {
-                return this.config;
+                return config;
             }
             set
             {
-                AxUtil.ValidateConfigNotNull(value);
-                this.config = value;
+                ValidateConfigNotNull(value);
+                config = value;
             }
         }
 
@@ -50,22 +50,22 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
         {
             if (scollection.Count == 0)
             {
-                throw new System.NullReferenceException("No certificate loaded.");
+                throw new NullReferenceException("No certificate loaded.");
             }
 
             foreach (X509Certificate2 x509 in scollection)
             {
                 X509Certificate2 certificate = x509;
 
-                return new LicenseGenerator(this.config, this.context).GenerateLicense(certificate);
+                return new LicenseGenerator(config, context).GenerateLicense(certificate);
             }
 
             return false;
         }
 
         public bool GenerateLicenseKeyVault(string keyVaultDNS, string keyName, string tenantId, string clientId, string clientSecret)
-        { 
-            return new LicenseGenerator(this.config, this.context).GenerateLicenseKeyVault(keyVaultDNS, keyName, tenantId, clientId, clientSecret);
+        {
+            return new LicenseGenerator(config, context).GenerateLicenseKeyVault(keyVaultDNS, keyName, tenantId, clientId, clientSecret);
         }
 
         private static void ValidateContextNotNull(AxUtilContext context)
@@ -84,8 +84,8 @@ namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
           AxUtilContext context,
           AxUtilConfiguration config)
         {
-            AxUtil.ValidateContextNotNull(context);
-            AxUtil.ValidateConfigNotNull(config);
+            ValidateContextNotNull(context);
+            ValidateConfigNotNull(config);
         }
     }
 }

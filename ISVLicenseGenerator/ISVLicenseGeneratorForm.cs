@@ -2,8 +2,8 @@
 using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Microsoft.Dynamics.AX.Framework.Tools.ModelManagement;
 using System.Security.Cryptography.X509Certificates;
+using AASAXUtilLib;
 
 namespace ISVLicenseGeneratorCore
 {
