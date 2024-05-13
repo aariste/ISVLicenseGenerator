@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Microsoft.Dynamics.AX.Framework.Tools.ModelManagement
+namespace AASAXUtilLib
 {
     [Serializable]
     public class AxUtilConfiguration
