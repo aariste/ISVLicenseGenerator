@@ -63,6 +63,11 @@ namespace AASAXUtilLib
             return false;
         }
 
+        public bool GenerateLicense(X509Certificate2 certificate)
+        {
+            return new LicenseGenerator(config, context).GenerateLicense(certificate);            
+        }
+
         public bool GenerateLicenseKeyVault(string keyVaultDNS, string keyName, string tenantId, string clientId, string clientSecret)
         {
             return new LicenseGenerator(config, context).GenerateLicenseKeyVault(keyVaultDNS, keyName, tenantId, clientId, clientSecret);
