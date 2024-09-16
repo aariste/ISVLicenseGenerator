@@ -21,6 +21,7 @@ namespace AASAXUtilLib
         private AxUtilContext context;
         private string formattedDate;
         private string formattedUserCount;
+        private string formattedAllowCrossDomainInstallation;
         private string formattedTimestamp;
 
         internal int SignatureVersion { get; set; }
@@ -59,6 +60,7 @@ namespace AASAXUtilLib
             }
             this.formattedUserCount = string.Empty;
         label_6:
+            this.formattedAllowCrossDomainInstallation = !this.licenseInfo.AllowCrossDomainInstallation.HasValue ? string.Empty : (this.licenseInfo.AllowCrossDomainInstallation.Value ? "1" : string.Empty);
             string[] strArray1 = new string[5];
             num = this.licenseInfo.Timestamp.Day;
             strArray1[0] = num.ToString((IFormatProvider)numberFormat);
@@ -113,6 +115,17 @@ namespace AASAXUtilLib
                     int local = (int)userCount.Value;
                     XAttribute xattribute = new XAttribute(name, (object)local);
                     xelement2.Add((object)xattribute);
+                }
+                bool? domainInstallation = this.licenseInfo.AllowCrossDomainInstallation;
+                if (domainInstallation.HasValue)
+                {
+                    XElement xelement3 = xelement1;
+                    XName name = (XName)"allowcrossdomaininstallation";
+                    domainInstallation = this.licenseInfo.AllowCrossDomainInstallation;
+                    // ISSUE: variable of a boxed type
+                    bool local = (bool)domainInstallation.Value;
+                    XAttribute content = new XAttribute(name, (object)local);
+                    xelement3.Add((object)content);
                 }
                 xelement1.Add((object)new XAttribute((XName)"timestamp", (object)this.formattedTimestamp));
                 xelement1.Add((object)new XAttribute((XName)nameof(signature), (object)signature));
@@ -173,8 +186,8 @@ namespace AASAXUtilLib
 
         private string GenerateSignature(X509Certificate2 certificate)
         {
-            byte[] bytes = new UnicodeEncoding().GetBytes((this.licenseInfo.Customer + this.licenseInfo.SerialNumber + this.formattedDate + this.licenseInfo.LicenseCode + this.formattedUserCount + this.formattedTimestamp).ToUpperInvariant());            
-            RSA rsa = certificate.GetRSAPrivateKey();            
+            byte[] bytes = new UnicodeEncoding().GetBytes(((!this.licenseInfo.AllowCrossDomainInstallation.HasValue || !this.licenseInfo.AllowCrossDomainInstallation.Value ? this.licenseInfo.Customer : string.Empty) + this.licenseInfo.SerialNumber + this.formattedDate + this.licenseInfo.LicenseCode + this.formattedUserCount + this.formattedTimestamp + this.formattedAllowCrossDomainInstallation).ToUpperInvariant());            
+            RSA rsa = certificate.GetRSAPrivateKey();
             byte[] numArray1 = this.SignData(rsa, bytes);
             byte[] inArray = new byte[((IEnumerable<byte>)numArray1).Count<byte>() + 1];
             int num1 = 0;
@@ -190,7 +203,7 @@ namespace AASAXUtilLib
 
         private string GenerateSignatureKeyVault(ClientSecretCredential credential, string keyVaultDNS, string keyName)
         {
-            byte[] bytes = new UnicodeEncoding().GetBytes((this.licenseInfo.Customer + this.licenseInfo.SerialNumber + this.formattedDate + this.licenseInfo.LicenseCode + this.formattedUserCount + this.formattedTimestamp).ToUpperInvariant());
+            byte[] bytes = new UnicodeEncoding().GetBytes(((!this.licenseInfo.AllowCrossDomainInstallation.HasValue || !this.licenseInfo.AllowCrossDomainInstallation.Value ? this.licenseInfo.Customer : string.Empty) + this.licenseInfo.SerialNumber + this.formattedDate + this.licenseInfo.LicenseCode + this.formattedUserCount + this.formattedTimestamp + this.formattedAllowCrossDomainInstallation).ToUpperInvariant());
             var client = new KeyClient(new Uri(keyVaultDNS), credential);
             var cryptoClient = client.GetCryptographyClient(keyName);
 
