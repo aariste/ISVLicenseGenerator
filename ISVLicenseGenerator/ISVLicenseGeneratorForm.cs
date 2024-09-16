@@ -4,6 +4,9 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Security.Cryptography.X509Certificates;
 using AASAXUtilLib;
+using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 
 namespace ISVLicenseGeneratorCore
 {
@@ -90,6 +93,11 @@ namespace ISVLicenseGeneratorCore
             if (UserCount.Value > 0)
             {
                 licenseInfo.UserCount = (int)UserCount.Value;
+            }
+
+            if (allowCrossDomainInstallationCheckBox.Checked)
+            {
+                licenseInfo.AllowCrossDomainInstallation = true;
             }
 
             if (!this.ValidateFields())

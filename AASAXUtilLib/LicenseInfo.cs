@@ -22,5 +22,6 @@ namespace AASAXUtilLib
 
         public DateTime Timestamp { get; set; }
 
+        public bool? AllowCrossDomainInstallation { get; set; }
     }
 }
