@@ -68,8 +68,6 @@ namespace ISVLicenseGeneratorCore
             SecretTB = new System.Windows.Forms.TextBox();
             AppIDLbl = new System.Windows.Forms.Label();
             secretLbl = new System.Windows.Forms.Label();
-            allowCrossDomainInstallationLbl = new System.Windows.Forms.Label();
-            allowCrossDomainInstallationCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)UserCount).BeginInit();
             MainMenuStrip.SuspendLayout();
             SuspendLayout();
@@ -127,7 +125,7 @@ namespace ISVLicenseGeneratorCore
             ExpirationDateLbl.AutoSize = true;
             ExpirationDateLbl.Location = new System.Drawing.Point(12, 322);
             ExpirationDateLbl.Name = "ExpirationDateLbl";
-            ExpirationDateLbl.Size = new System.Drawing.Size(86, 15);
+            ExpirationDateLbl.Size = new System.Drawing.Size(85, 15);
             ExpirationDateLbl.TabIndex = 9;
             ExpirationDateLbl.Text = "Expiration date";
             // 
@@ -160,9 +158,9 @@ namespace ISVLicenseGeneratorCore
             // 
             // GenerateBtn
             // 
-            GenerateBtn.Location = new System.Drawing.Point(474, 413);
+            GenerateBtn.Location = new System.Drawing.Point(474, 386);
             GenerateBtn.Name = "GenerateBtn";
-            GenerateBtn.Size = new System.Drawing.Size(90, 30);
+            GenerateBtn.Size = new System.Drawing.Size(90, 31);
             GenerateBtn.TabIndex = 13;
             GenerateBtn.Text = "Generate";
             GenerateBtn.UseVisualStyleBackColor = true;
@@ -171,11 +169,11 @@ namespace ISVLicenseGeneratorCore
             // OutputTB
             // 
             OutputTB.Enabled = false;
-            OutputTB.Location = new System.Drawing.Point(12, 449);
+            OutputTB.Location = new System.Drawing.Point(12, 422);
             OutputTB.Multiline = true;
             OutputTB.Name = "OutputTB";
             OutputTB.ReadOnly = true;
-            OutputTB.Size = new System.Drawing.Size(556, 145);
+            OutputTB.Size = new System.Drawing.Size(556, 146);
             OutputTB.TabIndex = 14;
             // 
             // ResultLbl
@@ -218,7 +216,7 @@ namespace ISVLicenseGeneratorCore
             // MandatoryLbl
             // 
             MandatoryLbl.AutoSize = true;
-            MandatoryLbl.Location = new System.Drawing.Point(12, 403);
+            MandatoryLbl.Location = new System.Drawing.Point(12, 376);
             MandatoryLbl.Name = "MandatoryLbl";
             MandatoryLbl.Size = new System.Drawing.Size(115, 15);
             MandatoryLbl.TabIndex = 19;
@@ -245,7 +243,7 @@ namespace ISVLicenseGeneratorCore
             // exitToolStripMenuItem
             // 
             exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
             exitToolStripMenuItem.Text = "Exit";
             exitToolStripMenuItem.Click += exitToolStripMenuItem_Click;
             // 
@@ -333,7 +331,7 @@ namespace ISVLicenseGeneratorCore
             EntraIDTenantLbl.AutoSize = true;
             EntraIDTenantLbl.Location = new System.Drawing.Point(12, 119);
             EntraIDTenantLbl.Name = "EntraIDTenantLbl";
-            EntraIDTenantLbl.Size = new System.Drawing.Size(115, 15);
+            EntraIDTenantLbl.Size = new System.Drawing.Size(116, 15);
             EntraIDTenantLbl.TabIndex = 28;
             EntraIDTenantLbl.Text = "Entra ID Tenant Id (*)";
             // 
@@ -376,31 +374,11 @@ namespace ISVLicenseGeneratorCore
             secretLbl.TabIndex = 33;
             secretLbl.Text = "Secret (*)";
             // 
-            // allowCrossDomainInstallationLbl
-            // 
-            allowCrossDomainInstallationLbl.AutoSize = true;
-            allowCrossDomainInstallationLbl.Location = new System.Drawing.Point(12, 377);
-            allowCrossDomainInstallationLbl.Name = "allowCrossDomainInstallationLbl";
-            allowCrossDomainInstallationLbl.Size = new System.Drawing.Size(172, 15);
-            allowCrossDomainInstallationLbl.TabIndex = 34;
-            allowCrossDomainInstallationLbl.Text = "Allow cross domain installation";
-            // 
-            // allowCrossDomainInstallationCheckBox
-            // 
-            allowCrossDomainInstallationCheckBox.AutoSize = true;
-            allowCrossDomainInstallationCheckBox.Location = new System.Drawing.Point(188, 377);
-            allowCrossDomainInstallationCheckBox.Name = "allowCrossDomainInstallationCheckBox";
-            allowCrossDomainInstallationCheckBox.Size = new System.Drawing.Size(15, 14);
-            allowCrossDomainInstallationCheckBox.TabIndex = 35;
-            allowCrossDomainInstallationCheckBox.UseVisualStyleBackColor = true;
-            // 
             // ISVLicenseGeneratorForm
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(577, 613);
-            Controls.Add(allowCrossDomainInstallationCheckBox);
-            Controls.Add(allowCrossDomainInstallationLbl);
             Controls.Add(secretLbl);
             Controls.Add(AppIDLbl);
             Controls.Add(SecretTB);
@@ -480,8 +458,6 @@ namespace ISVLicenseGeneratorCore
         private System.Windows.Forms.TextBox SecretTB;
         private System.Windows.Forms.Label AppIDLbl;
         private System.Windows.Forms.Label secretLbl;
-        private System.Windows.Forms.Label allowCrossDomainInstallationLbl;
-        private System.Windows.Forms.CheckBox allowCrossDomainInstallationCheckBox;
     }
 }
 
