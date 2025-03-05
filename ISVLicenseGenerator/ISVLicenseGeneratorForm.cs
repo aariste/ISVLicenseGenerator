@@ -95,11 +95,6 @@ namespace ISVLicenseGeneratorCore
                 licenseInfo.UserCount = (int)UserCount.Value;
             }
 
-            if (allowCrossDomainInstallationCheckBox.Checked)
-            {
-                licenseInfo.AllowCrossDomainInstallation = true;
-            }
-
             if (!this.ValidateFields())
             {
                 MessageBox.Show("Please fill all mandatory fields.");
