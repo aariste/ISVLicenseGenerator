@@ -2,6 +2,8 @@
 
 ![Build](https://github.com/aariste/ISVLicenseGenerator/workflows/CI/badge.svg)
 
+THIS TOOL IS ONLY MAINTAINED FOR LEGACY SUPPORT REASONS. PLEASE READ THE [OFFICIAL MICROSOFT DOCUMENTATION ON LEARN IF YOU WANT TO USE YOUR USB HSM TO GENERATE LICENSE FILES](https://learn.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/dev-tools/isv-licensing#create-a-package-and-generate-a-customer-specific-license).
+
 This tool has been created to generate ISV licenses for Microsoft Dynamics 365 Finance and Operations Apps using a USB CSP eToken. I'm using a modified version of the AXUtilLib assembly found in a MSDyn365FO VM packages bin folder to allow the usage of the USB token. This assembly is owned by Microsoft and I've only modified it with learning purposes.
 
 The [standard ISV licensing](https://docs.microsoft.com/en-us/dynamics365/fin-ops-core/dev-itpro/dev-tools/isv-licensing#certificate-import-and-export) only supports software PFX (PKCS #12) format certificates. In case you buy a certificate and you get a CSP token you won't be able to export the private key needed to sign the license.
