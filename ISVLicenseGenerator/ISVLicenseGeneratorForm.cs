@@ -107,19 +107,21 @@ namespace ISVLicenseGeneratorCore
 
             AxUtil util = new AxUtil(context, config);
 
-            X509Store store = new X509Store("My", StoreLocation.CurrentUser);
-            store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
-
-            X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
-            X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
-            X509Certificate2Collection scollection = X509Certificate2UI.SelectFromCollection(fcollection, "Certificate Select", "Select a certificate from the following list to sign the license", X509SelectionFlag.SingleSelection);
-
-            Boolean result = util.GenerateLicense(scollection);
-
-            if (result == true)
+            using (X509Store store = new X509Store("My", StoreLocation.CurrentUser))
             {
-                MessageBox.Show(String.Format("License generated successfully. Saved at {0}", PathTB.Text));
-                OutputTB.Text = String.Format("License generated successfully. Saved at {0}", PathTB.Text);
+                store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
+
+                X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
+                X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
+                X509Certificate2Collection scollection = X509Certificate2UI.SelectFromCollection(fcollection, "Certificate Select", "Select a certificate from the following list to sign the license", X509SelectionFlag.SingleSelection);
+
+                Boolean result = util.GenerateLicense(scollection);
+
+                if (result == true)
+                {
+                    MessageBox.Show(String.Format("License generated successfully. Saved at {0}", PathTB.Text));
+                    OutputTB.Text = String.Format("License generated successfully. Saved at {0}", PathTB.Text);
+                }
             }
         }
 
