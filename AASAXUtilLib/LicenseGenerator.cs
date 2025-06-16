@@ -102,7 +102,7 @@ namespace AASAXUtilLib
             {
                 XElement xelement1 = new XElement((XName)"License");
                 xelement1.Add((object)new XAttribute((XName)"version", (object)this.version));
-                xelement1.Add((object)new XAttribute((XName)"certificateSerialNumer", (object)certificate.SerialNumber));
+                xelement1.Add((object)new XAttribute((XName)"certificateSerialNumber", (object)certificate.SerialNumber));
                 xelement1.Add((object)new XAttribute((XName)"licensecode", (object)this.licenseInfo.LicenseCode));
                 xelement1.Add((object)new XAttribute((XName)"serialnumber", (object)this.licenseInfo.SerialNumber));
                 if (this.licenseInfo.ExpirationDate.HasValue)
@@ -147,7 +147,7 @@ namespace AASAXUtilLib
 
                 XElement xelement1 = new XElement((XName)"License");
                 xelement1.Add((object)new XAttribute((XName)"version", (object)this.version));
-                xelement1.Add((object)new XAttribute((XName)"certificateSerialNumer", (object)serialNumber));
+                xelement1.Add((object)new XAttribute((XName)"certificateSerialNumber", (object)serialNumber));
                 xelement1.Add((object)new XAttribute((XName)"licensecode", (object)this.licenseInfo.LicenseCode));
                 xelement1.Add((object)new XAttribute((XName)"serialnumber", (object)this.licenseInfo.SerialNumber));
                 if (this.licenseInfo.ExpirationDate.HasValue)
