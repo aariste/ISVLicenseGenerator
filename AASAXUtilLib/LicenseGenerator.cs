@@ -79,8 +79,10 @@ namespace AASAXUtilLib
 
         internal bool GenerateLicense(X509Certificate2 usbCertificate)
         {
-            X509Certificate2 certificate = usbCertificate;
-            return certificate != null && this.GenerateLicenseFile(this.GenerateSignature(certificate), certificate);
+            if (usbCertificate == null || !ValidateCertificate(usbCertificate))
+                return false;
+
+            return GenerateLicenseFile(GenerateSignature(usbCertificate), usbCertificate);
         }
 
         internal bool GenerateLicenseKeyVault(string keyVaultDNS, string keyName, string tenantId, string clientId, string clientSecret)
