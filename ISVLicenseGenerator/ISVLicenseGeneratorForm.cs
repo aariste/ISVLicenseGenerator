@@ -64,13 +64,9 @@ namespace ISVLicenseGeneratorCore
             saveFileDialog.Title = "Save license";
             saveFileDialog.ShowDialog();
 
-            if (!String.IsNullOrEmpty(saveFileDialog.FileName))
+            if (!string.IsNullOrEmpty(saveFileDialog.FileName))
             {
-                System.IO.FileStream fs = (System.IO.FileStream)saveFileDialog.OpenFile();
-
                 PathTB.Text = saveFileDialog.FileName;
-
-                fs.Close();
             }
         }
 
