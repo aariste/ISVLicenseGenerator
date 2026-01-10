@@ -350,9 +350,10 @@ namespace ISVLicenseGeneratorCore
             AppIdTB.TabIndex = 30;
             // 
             // SecretTB
-            // 
+            //
             SecretTB.Location = new System.Drawing.Point(190, 169);
             SecretTB.Name = "SecretTB";
+            SecretTB.PasswordChar = '*';
             SecretTB.Size = new System.Drawing.Size(377, 23);
             SecretTB.TabIndex = 31;
             // 

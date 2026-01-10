@@ -12,6 +12,9 @@ namespace ISVLicenseGeneratorCore
 {
     public partial class ISVLicenseGeneratorForm : Form
     {
+        private const string CertificateStoreName = "My";
+        private const int SignatureVersion = 2;
+
         AxUtilConfiguration config;
 
         public ISVLicenseGeneratorForm()
@@ -26,10 +29,10 @@ namespace ISVLicenseGeneratorCore
 
             config = new AxUtilConfiguration();
 
-            config.SignatureVersion = 2;
+            config.SignatureVersion = SignatureVersion;
         }
 
-        private void GenerateBtn_Click(object sender, EventArgs e)
+        private async void GenerateBtn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -39,7 +42,7 @@ namespace ISVLicenseGeneratorCore
                 }
                 else
                 {
-                    this.GenerateLicenseKeyVault();
+                    await this.GenerateLicenseKeyVaultAsync();
                 }
             }
             catch (Exception ex)
@@ -48,12 +51,12 @@ namespace ISVLicenseGeneratorCore
             }
         }
 
-        private Boolean ValidateFields()
+        private bool ValidateFields()
         {
             return !String.IsNullOrEmpty(PathTB.Text) && !String.IsNullOrEmpty(LicenseCodeTB.Text) && !String.IsNullOrEmpty(CustomerTB.Text) && !String.IsNullOrEmpty(SerialNumberTB.Text);
         }
 
-        private Boolean ValidateFieldsKeyVault()
+        private bool ValidateFieldsKeyVault()
         {
             return !String.IsNullOrEmpty(EntraIDTenantTB.Text) && !String.IsNullOrEmpty(AppIdTB.Text) && !String.IsNullOrEmpty(SecretTB.Text) && !String.IsNullOrEmpty(PathTB.Text) && !String.IsNullOrEmpty(keyVaultNameTB.Text) && !String.IsNullOrEmpty(keyNameTB.Text) && !String.IsNullOrEmpty(LicenseCodeTB.Text) && !String.IsNullOrEmpty(CustomerTB.Text) && !String.IsNullOrEmpty(SerialNumberTB.Text);
         }
@@ -66,11 +69,10 @@ namespace ISVLicenseGeneratorCore
 
             if (!String.IsNullOrEmpty(saveFileDialog.FileName))
             {
-                System.IO.FileStream fs = (System.IO.FileStream)saveFileDialog.OpenFile();
-
-                PathTB.Text = saveFileDialog.FileName;
-
-                fs.Close();
+                using (System.IO.FileStream fs = (System.IO.FileStream)saveFileDialog.OpenFile())
+                {
+                    PathTB.Text = saveFileDialog.FileName;
+                }
             }
         }
 
@@ -107,23 +109,26 @@ namespace ISVLicenseGeneratorCore
 
             AxUtil util = new AxUtil(context, config);
 
-            X509Store store = new X509Store("My", StoreLocation.CurrentUser);
-            store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
+            bool result;
+            using (X509Store store = new X509Store(CertificateStoreName, StoreLocation.CurrentUser))
+            {
+                store.Open(OpenFlags.ReadOnly | OpenFlags.OpenExistingOnly);
 
-            X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
-            X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
-            X509Certificate2Collection scollection = X509Certificate2UI.SelectFromCollection(fcollection, "Certificate Select", "Select a certificate from the following list to sign the license", X509SelectionFlag.SingleSelection);
+                X509Certificate2Collection collection = (X509Certificate2Collection)store.Certificates;
+                X509Certificate2Collection fcollection = (X509Certificate2Collection)collection.Find(X509FindType.FindByTimeValid, DateTime.Now, false);
+                X509Certificate2Collection scollection = X509Certificate2UI.SelectFromCollection(fcollection, "Certificate Select", "Select a certificate from the following list to sign the license", X509SelectionFlag.SingleSelection);
 
-            Boolean result = util.GenerateLicense(scollection);
+                result = util.GenerateLicense(scollection);
+            }
 
-            if (result == true)
+            if (result)
             {
                 MessageBox.Show(String.Format("License generated successfully. Saved at {0}", PathTB.Text));
                 OutputTB.Text = String.Format("License generated successfully. Saved at {0}", PathTB.Text);
             }
         }
 
-        private void GenerateLicenseKeyVault()
+        private async System.Threading.Tasks.Task GenerateLicenseKeyVaultAsync()
         {
             LicenseInfo licenseInfo = new LicenseInfo
             {
@@ -156,9 +161,9 @@ namespace ISVLicenseGeneratorCore
 
             AxUtil util = new AxUtil(context, config);
 
-            Boolean result = util.GenerateLicenseKeyVault(keyVaultNameTB.Text, keyNameTB.Text, EntraIDTenantTB.Text, AppIdTB.Text, SecretTB.Text);
+            bool result = await util.GenerateLicenseKeyVaultAsync(keyVaultNameTB.Text, keyNameTB.Text, EntraIDTenantTB.Text, AppIdTB.Text, SecretTB.Text);
 
-            if (result == true)
+            if (result)
             {
                 MessageBox.Show(String.Format("License generated successfully. Saved at {0}", PathTB.Text));
                 OutputTB.Text = String.Format("License generated successfully. Saved at {0}", PathTB.Text);
@@ -175,11 +180,12 @@ namespace ISVLicenseGeneratorCore
             string url = "https://github.com/aariste/ISVLicenseGenerator/blob/master/README.md";
             try
             {
-                Process.Start(url);
+                // Modern approach using UseShellExecute for cross-platform support
+                Process.Start(new ProcessStartInfo(url) { UseShellExecute = true });
             }
             catch
             {
-                // hack because of this: https://github.com/dotnet/corefx/issues/10361
+                // Fallback for older platforms or restricted environments
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
                 {
                     url = url.Replace("&", "^&");
